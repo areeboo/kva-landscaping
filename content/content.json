@@ -2,7 +2,6 @@
   "business": {
     "legal_name": "KVA Landscaping LLC",
     "display_name": "KVA Landscaping",
-    "owner": "Victor Amaya",
     "phone_primary": "(571) 308-3932",
     "phone_alt": "(571) 316-0293",
     "email": "Kvalandscaping@gmail.com",
@@ -29,7 +28,6 @@
     "years_in_business": 9,
     "payment_methods": ["Apple Pay", "Cash", "Check", "Credit Card", "PayPal", "Venmo", "Zelle"],
     "credentials": [
-      "Class A Licensed Virginia Contractor",
       "Thumbtack Top Pro 2023",
       "Thumbtack Top Pro 2025"
     ],
@@ -45,7 +43,7 @@
     "primary_cta": {"label": "Get a Free Estimate", "anchor": "#estimate"},
     "secondary_cta": {"label": "Call (571) 308-3932", "tel": "+15713083932"},
     "trust_strip": [
-      "Class A Licensed",
+      "Family-Run",
       "9 Years in NoVA",
       "Top Pro 2025",
       "165+ Five-Star Reviews"
@@ -72,7 +70,7 @@
     {
       "slug": "hardscape-patios",
       "title": "Hardscape & Patios",
-      "blurb": "Paver patios, walkways, and stone work that stay level for years. Class A licensed means we build it right the first time.",
+      "blurb": "Paver patios, walkways, and stone work that stay level for years — built once, the right way, by a crew that has been doing it for nine seasons.",
       "details": ["Paver patios", "Walkways + steps", "Retaining walls", "Re-leveling existing hardscape", "Stone borders"],
       "icon": "Layers",
       "image": "/images/svc-hardscape.jpg"
@@ -106,7 +104,7 @@
     {
       "step": 1,
       "title": "Free on-site estimate",
-      "description": "Call or fill out the form. Victor or a senior crew lead walks the property within a few days, listens to what you want, and gives you a real number — not a guess."
+      "description": "Call or fill out the form. A senior crew lead walks the property within a few days, listens to what you want, and gives you a real number — not a guess."
     },
     {
       "step": 2,
@@ -201,9 +199,9 @@
   },
   "about": {
     "headline": "One Sterling crew. Nine years. Every yard treated like a neighbor's.",
-    "body": "KVA Landscaping is run by Victor Amaya out of Sterling, VA. We have been doing landscape work in Loudoun and Fairfax for nine years — the same crew, the same number, the same standards. We are a Class A licensed Virginia contractor, which means we can pull permits and do hardscape that lasts, not just mow and run. Most of our work is for homeowners within ten miles of Sterling — Herndon, Leesburg, Ashburn, Reston — plus a handful of property managers we have been with for years. We show up when we said we would, we do good work, and we come back when you call.",
+    "body": "KVA Landscaping is a family-run crew out of Sterling, VA. We have been doing landscape work in Loudoun and Fairfax for nine years — the same crew, the same number, the same standards. From weekly mowing and seasonal mulch to full hardscape builds, we cover the whole yard with one team that already knows your property. Most of our work is for homeowners within ten miles of Sterling — Herndon, Leesburg, Ashburn, Reston — plus a handful of property managers we have been with for years. We show up when we said we would, we do good work, and we come back when you call.",
     "credentials_callout": [
-      "Class A Licensed Virginia Contractor",
+      "165+ Five-Star Reviews",
       "Thumbtack Top Pro 2023 + 2025",
       "9 Years Serving NoVA",
       "Family-Run · Local Crew"
@@ -221,17 +219,17 @@
       {"name": "message", "label": "Anything else? (photos welcome)", "type": "textarea", "required": false}
     ],
     "submit_label": "Send",
-    "success_message": "Thanks — we got it. Victor or a senior crew lead will text or call you within one business day to set up a walk-through."
+    "success_message": "Thanks — we got it. A senior crew lead will text or call you within one business day to set up a walk-through."
   },
   "footer": {
-    "tagline": "Sterling, VA · Family-run · Class A Licensed",
+    "tagline": "Sterling, VA · Family-run · 9 Years Local",
     "service_area_pills": ["Sterling", "Herndon", "Leesburg", "Ashburn", "Reston", "Great Falls"],
     "payment_pills": ["Apple Pay", "Cash", "Check", "Credit", "PayPal", "Venmo", "Zelle"],
     "copyright_owner": "KVA Landscaping LLC"
   },
   "seo": {
     "title": "KVA Landscaping — Sterling VA Lawn Care, Hardscape & Landscape Design",
-    "description": "Class A licensed landscape crew in Sterling, VA. Lawn care, paver patios, mulch, irrigation, snow plowing for Sterling, Herndon, Leesburg, Ashburn, Reston. 165+ five-star reviews, 9 years local.",
+    "description": "Family-run landscape crew in Sterling, VA. Lawn care, paver patios, mulch, irrigation, snow plowing for Sterling, Herndon, Leesburg, Ashburn, Reston. 165+ five-star reviews, 9 years local.",
     "keywords": ["Sterling VA landscaping", "landscaping Sterling Virginia", "paver patio Sterling VA", "lawn care Herndon", "landscape design Leesburg", "mulch installation Ashburn", "hardscape Loudoun County"]
   }
 }

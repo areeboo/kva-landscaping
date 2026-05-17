@@ -24,10 +24,10 @@ export function About() {
               {/* Quote card overlay */}
               <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-kva-cream/20 bg-kva-ink/85 p-5 text-kva-cream backdrop-blur-md sm:inset-x-6 sm:bottom-6 sm:p-6">
                 <p className="font-display text-base italic leading-snug sm:text-lg">
-                  &ldquo;Same crew, same owner, same number for nine years.&rdquo;
+                  &ldquo;Same crew, same number, nine years. The work speaks for itself.&rdquo;
                 </p>
                 <p className="mt-2 text-xs uppercase tracking-wider text-kva-cream/60">
-                  Victor Amaya · Owner
+                  KVA Landscaping · Sterling, VA
                 </p>
               </div>
             </div>

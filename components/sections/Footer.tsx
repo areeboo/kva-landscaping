@@ -112,7 +112,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-kva-stone-light pt-6 text-xs text-kva-stone sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} {footer.copyright_owner}. Class A Licensed in Virginia.</p>
+          <p>© {new Date().getFullYear()} {footer.copyright_owner}. Family-run in Sterling, VA.</p>
           <p>
             Site by{" "}
             <a href="https://omnisolutions.example.com" className="text-kva-forest hover:underline">

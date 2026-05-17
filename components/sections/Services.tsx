@@ -38,7 +38,7 @@ export function Services() {
             </span>
           </h2>
           <p className="mt-5 text-pretty text-lg leading-relaxed text-kva-stone">
-            Class A licensed in Virginia, which means we build the kind of hardscape that holds up year after year, not just mow and run. Pick what you need — we do all of it with the same crew.
+            Nine years of building outdoor spaces that hold up year after year — not just mow and run. Pick what you need; the same crew handles all of it.
           </p>
         </div>
 
