@@ -26,22 +26,6 @@ export function Hero() {
       </div>
 
       <div className="kva-container flex min-h-[78vh] flex-col justify-end pb-16 sm:min-h-[82vh] sm:pb-20 lg:pb-28">
-        {/* Top eyebrow */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-6 flex items-center gap-3 text-sm font-medium text-kva-cream/80"
-        >
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-kva-cream/20 bg-kva-cream/5 px-3 py-1 backdrop-blur-sm">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inset-0 animate-ping rounded-full bg-kva-gold/60" />
-              <span className="relative rounded-full bg-kva-gold" />
-            </span>
-            Sterling, VA · Booking summer projects
-          </span>
-        </motion.div>
-
         <motion.h1
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}

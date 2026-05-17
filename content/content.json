@@ -23,7 +23,8 @@
       {"city": "Herndon", "zips": ["20170", "20171"], "note": "Front-yard sod and seasonal mulch for the brick colonials near Folly Lick Stream. Tree and shrub maintenance in Chandon and Floris."},
       {"city": "Leesburg", "zips": ["20175", "20176", "20177"], "note": "Hardscape installs and patio re-levels in River Creek, Lansdowne, and the historic district. Long-haul maintenance for property managers along Edwards Ferry Rd."},
       {"city": "Ashburn", "zips": ["20147", "20148"], "note": "Landscape design and full-yard refreshes in Brambleton, Belmont Country Club, and Loudoun Valley. Irrigation work for the newer Goose Creek-side builds."},
-      {"city": "Reston", "zips": ["20190", "20191", "20194"], "note": "Mulch + bed cleanups and shrub shaping for HOA-managed properties near Lake Anne and South Lakes. Snow plow runs along Sunset Hills."}
+      {"city": "Reston", "zips": ["20190", "20191", "20194"], "note": "Mulch + bed cleanups and shrub shaping for HOA-managed properties near Lake Anne and South Lakes. Snow plow runs along Sunset Hills."},
+      {"city": "Great Falls", "zips": ["22066"], "note": "Larger wooded lots near Great Falls Village, River Bend, and Georgetown Pike. Drainage, deer pressure, long driveways, and freeze-thaw movement matter on mulch beds, patios, and stone walkways."}
     ],
     "years_in_business": 9,
     "payment_methods": ["Apple Pay", "Cash", "Check", "Credit Card", "PayPal", "Venmo", "Zelle"],
