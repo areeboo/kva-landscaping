@@ -1,26 +1,136 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* KVA Landscaping palette — warm-premium, photo-driven */
+  --kva-forest: oklch(0.30 0.07 145);          /* primary brand green */
+  --kva-forest-deep: oklch(0.22 0.06 145);     /* deeper accent */
+  --kva-forest-soft: oklch(0.55 0.10 145);     /* lighter green */
+  --kva-cream: oklch(0.97 0.013 90);           /* paper background */
+  --kva-cream-warm: oklch(0.94 0.018 85);      /* warmer surface */
+  --kva-stone: oklch(0.52 0.013 80);           /* secondary text */
+  --kva-stone-light: oklch(0.85 0.010 80);     /* hairlines */
+  --kva-gold: oklch(0.74 0.13 75);             /* CTA + badges */
+  --kva-gold-deep: oklch(0.62 0.14 65);        /* hover state */
+  --kva-ink: oklch(0.18 0.02 240);             /* dark text */
+
+  --background: var(--kva-cream);
+  --foreground: var(--kva-ink);
+  --muted: var(--kva-cream-warm);
+  --muted-foreground: var(--kva-stone);
+  --border: var(--kva-stone-light);
+  --primary: var(--kva-forest);
+  --primary-foreground: var(--kva-cream);
+  --accent: var(--kva-gold);
+  --accent-foreground: var(--kva-ink);
+  --ring: var(--kva-forest);
+
+  --radius: 0.625rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ring: var(--ring);
+
+  --color-kva-forest: var(--kva-forest);
+  --color-kva-forest-deep: var(--kva-forest-deep);
+  --color-kva-forest-soft: var(--kva-forest-soft);
+  --color-kva-cream: var(--kva-cream);
+  --color-kva-cream-warm: var(--kva-cream-warm);
+  --color-kva-stone: var(--kva-stone);
+  --color-kva-stone-light: var(--kva-stone-light);
+  --color-kva-gold: var(--kva-gold);
+  --color-kva-gold-deep: var(--kva-gold-deep);
+  --color-kva-ink: var(--kva-ink);
+
+  --font-sans: var(--font-kva-sans);
+  --font-display: var(--font-kva-display);
+  --font-mono: var(--font-kva-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--kva-forest);
+    color: var(--kva-cream);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), Georgia, serif;
+    font-variation-settings: "opsz" 144;
+    letter-spacing: -0.02em;
+  }
+
+  .font-display-tight {
+    font-family: var(--font-display), Georgia, serif;
+    font-variation-settings: "opsz" 144, "wght" 500;
+    letter-spacing: -0.025em;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Subtle texture overlay */
+  .bg-paper {
+    background-color: var(--kva-cream);
+    background-image:
+      radial-gradient(at 0% 0%, oklch(0.94 0.02 85 / 0.6) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, oklch(0.92 0.02 80 / 0.4) 0px, transparent 50%);
+  }
+
+  .ring-kva-soft {
+    box-shadow: 0 1px 0 0 oklch(0.20 0.02 240 / 0.04), 0 0 0 1px oklch(0.20 0.02 240 / 0.06);
+  }
+}
+
+@layer components {
+  .kva-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .kva-container { padding-left: 2rem; padding-right: 2rem; }
+  }
+  @media (min-width: 1024px) {
+    .kva-container { padding-left: 3rem; padding-right: 3rem; }
+  }
 }
