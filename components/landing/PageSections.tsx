@@ -141,7 +141,7 @@ export function ReviewCards({
                     <div className="font-medium text-kva-ink">{review.author}</div>
                     <div className="text-xs text-kva-stone">{review.source} · {review.date}</div>
                   </div>
-                  <span className="flex items-center gap-0.5" aria-label={`${review.rating} star review`}>
+                  <span role="img" className="flex items-center gap-0.5" aria-label={`${review.rating} star review`}>
                     {Array.from({ length: 5 }).map((_, index) => (
                       <Star
                         key={index}

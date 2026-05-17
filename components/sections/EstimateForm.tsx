@@ -69,7 +69,7 @@ export function EstimateForm() {
                   Text us
                 </a>
               </div>
-              <p className="ml-7 text-xs text-kva-cream/65">Text or call is fine — whichever you prefer.</p>
+              <p className="ml-7 text-xs text-kva-cream/75">Text or call is fine — whichever you prefer.</p>
               <div className="flex items-center gap-3">
                 <span className="inline-flex h-4 w-4 items-center justify-center" aria-hidden>
                   ✉
@@ -155,7 +155,7 @@ export function EstimateForm() {
                 >
                   <legend className="mb-2 block text-sm font-medium text-kva-cream">
                     What do you need?{" "}
-                    <span className="text-kva-cream/65">(pick all that apply)</span>
+                    <span className="text-kva-cream/75">(pick all that apply)</span>
                   </legend>
                   <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                     {visibleServiceOptions.map((opt) => (
@@ -208,7 +208,7 @@ export function EstimateForm() {
                   {pending ? "Sending…" : "Send"}
                   {!pending && <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />}
                 </button>
-                <p className="text-xs text-kva-cream/55">
+                <p className="text-xs text-kva-cream/75">
                   We will not spam you or share your info. One reply within a business day, then a walk-through if you want it.
                 </p>
               </form>
@@ -317,7 +317,7 @@ function PhotoUploadField({
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-medium text-kva-cream">Photos</p>
-            <p id={helperId} className="mt-1 text-xs leading-relaxed text-kva-cream/65">
+            <p id={helperId} className="mt-1 text-xs leading-relaxed text-kva-cream/75">
               JPEG, PNG, HEIC, or WebP. Up to 5 photos, 5 MB each.
             </p>
           </div>
@@ -450,7 +450,7 @@ function Field({
         />
       )}
       {helper && !error && (
-        <p id={helperId} className="mt-1.5 text-xs text-kva-cream/65">{helper}</p>
+        <p id={helperId} className="mt-1.5 text-xs text-kva-cream/75">{helper}</p>
       )}
       {error && (
         <p id={errId} className="mt-1.5 text-xs text-kva-gold-deep">{error}</p>

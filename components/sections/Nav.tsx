@@ -28,8 +28,8 @@ export function Nav() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-border/60 bg-background/85 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70"
-          : "border-b border-transparent bg-gradient-to-b from-kva-ink/35 to-transparent",
+          ? "border-b border-border/60 bg-background shadow-sm"
+          : "border-b border-transparent bg-gradient-to-b from-kva-ink/45 to-transparent",
       )}
     >
       <div className="kva-container flex h-16 items-center justify-between gap-6 sm:h-20">
@@ -61,8 +61,8 @@ export function Nav() {
               className={cn(
                 "rounded text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-gold focus-visible:ring-offset-2",
                 scrolled
-                  ? "text-kva-stone hover:text-kva-ink focus-visible:ring-offset-background"
-                  : "text-kva-cream/85 hover:text-kva-cream focus-visible:ring-offset-kva-ink",
+                  ? "text-kva-ink hover:text-kva-forest focus-visible:ring-offset-background"
+                  : "text-kva-cream hover:text-kva-gold focus-visible:ring-offset-kva-ink",
               )}
             >
               {l.label}

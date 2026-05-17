@@ -27,7 +27,7 @@ export function Process() {
               className="relative flex flex-col bg-kva-forest p-7 sm:p-9"
             >
               <span
-                className="font-display text-7xl font-medium leading-none text-kva-gold/40 sm:text-8xl"
+                className="font-display text-7xl font-medium leading-none text-kva-gold/70 sm:text-8xl"
                 style={{ fontVariationSettings: '"opsz" 144, "wght" 400' }}
                 aria-hidden
               >

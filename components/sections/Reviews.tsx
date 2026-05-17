@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 import { content } from "@/lib/content";
 
+// Brand-adjacent tones that satisfy WCAG AAA (>=7:1) on cream-warm bg
 const sourceColors: Record<string, string> = {
-  Google: "text-[#4285F4]",
-  Yelp: "text-[#D32323]",
+  Google: "text-[#15418F]",
+  Yelp: "text-[#931A1A]",
   Thumbtack: "text-kva-forest",
 };
 
