@@ -6,6 +6,7 @@ import { siteUrl } from "@/lib/landing-pages";
 import { Nav } from "@/components/sections/Nav";
 import { Footer } from "@/components/sections/Footer";
 import { MobileStickyBar } from "@/components/sections/MobileStickyBar";
+import { Process } from "@/components/sections/Process";
 import { CtaStrip, DetailHero, LocationsGrid, SectionHeader, ServicesGrid, TrustStrip } from "@/components/landing/PageSections";
 
 export const metadata: Metadata = {
@@ -61,6 +62,7 @@ export default function ServicesIndexPage() {
           </div>
         </div>
       </section>
+      <Process />
       <section className="bg-kva-cream py-20 sm:py-24">
         <div className="kva-container">
           <SectionHeader
