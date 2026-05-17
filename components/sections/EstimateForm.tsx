@@ -36,12 +36,17 @@ export function EstimateForm() {
             </p>
 
             <div className="mt-10 space-y-3 text-sm text-kva-cream/85">
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3">
                 <Phone className="h-4 w-4 text-kva-gold" aria-hidden />
                 <a href={`tel:${content.hero.secondary_cta.tel}`} className="hover:text-kva-cream">
-                  {business.phone_primary}
+                  Call {business.phone_primary}
+                </a>
+                <span className="text-kva-cream/40" aria-hidden>·</span>
+                <a href={`sms:${content.hero.secondary_cta.tel}`} className="hover:text-kva-cream">
+                  Text us
                 </a>
               </div>
+              <p className="ml-7 text-xs text-kva-cream/65">Text or call is fine — whichever you prefer.</p>
               <div className="flex items-center gap-3">
                 <span className="inline-flex h-4 w-4 items-center justify-center" aria-hidden>
                   ✉
@@ -50,12 +55,9 @@ export function EstimateForm() {
                   {business.email}
                 </a>
               </div>
-              <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-kva-cream/10 px-4 py-2 text-xs text-kva-cream/80 backdrop-blur">
-                <span className="relative inline-flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-kva-gold/60" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-kva-gold" />
-                </span>
-                Typically replies within one business day
+              <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-kva-cream/10 px-4 py-2 text-xs text-kva-cream/85 backdrop-blur">
+                <span className="inline-flex h-2 w-2 rounded-full bg-kva-gold" aria-hidden />
+                {estimate_form.response_pill ?? "Usually replies within an hour during business hours."}
               </div>
             </div>
           </div>

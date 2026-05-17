@@ -76,13 +76,14 @@ export function Services() {
           })}
         </div>
 
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-kva-stone">
-          <span>Not sure what you need?</span>
+        <div className="mt-14 flex flex-col items-center gap-4">
+          <p className="text-sm text-kva-stone">Not sure what you need yet?</p>
           <a
             href="#estimate"
-            className="inline-flex items-center gap-1 font-medium text-kva-forest underline-offset-4 hover:underline"
+            className="group inline-flex items-center gap-2 rounded-full border-2 border-kva-forest bg-kva-cream px-6 py-3 text-base font-medium text-kva-forest transition-all hover:bg-kva-forest hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2"
           >
-            Have us walk the property — free.
+            Have a senior crew lead walk your property — free
+            <span className="transition-transform group-hover:translate-x-0.5" aria-hidden>→</span>
           </a>
         </div>
       </div>

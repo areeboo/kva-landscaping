@@ -59,10 +59,10 @@ export function Nav() {
               key={l.href}
               href={l.href}
               className={cn(
-                "text-sm font-medium transition-colors",
+                "rounded text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-gold focus-visible:ring-offset-2",
                 scrolled
-                  ? "text-kva-stone hover:text-kva-ink"
-                  : "text-kva-cream/85 hover:text-kva-cream",
+                  ? "text-kva-stone hover:text-kva-ink focus-visible:ring-offset-background"
+                  : "text-kva-cream/85 hover:text-kva-cream focus-visible:ring-offset-kva-ink",
               )}
             >
               {l.label}
@@ -74,10 +74,10 @@ export function Nav() {
           <a
             href={`tel:${content.hero.secondary_cta.tel}`}
             className={cn(
-              "hidden items-center gap-2 text-sm font-medium transition-colors sm:flex",
+              "hidden items-center gap-2 rounded text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-gold focus-visible:ring-offset-2 sm:flex",
               scrolled
-                ? "text-kva-ink hover:text-kva-forest"
-                : "text-kva-cream hover:text-kva-gold",
+                ? "text-kva-ink hover:text-kva-forest focus-visible:ring-offset-background"
+                : "text-kva-cream hover:text-kva-gold focus-visible:ring-offset-kva-ink",
             )}
             aria-label={`Call KVA Landscaping at ${content.business.phone_primary}`}
           >

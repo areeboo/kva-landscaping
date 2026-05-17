@@ -12,8 +12,18 @@ export function JsonLd() {
     url: siteUrl,
     telephone: content.business.phone_primary,
     email: content.business.email,
-    image: `${siteUrl}/images/portfolio/fresh-mow.jpg`,
+    image: [
+      `${siteUrl}/images/portfolio/fresh-mow.jpg`,
+      `${siteUrl}/images/portfolio/brick-home-shrubs.jpg`,
+      `${siteUrl}/images/portfolio/lawn-after.jpg`,
+      `${siteUrl}/images/portfolio/lawn-before.jpg`,
+    ],
+    logo: `${siteUrl}/icon.png`,
     priceRange: "$$",
+    paymentAccepted: content.business.payment_methods.join(", "),
+    currenciesAccepted: "USD",
+    slogan: content.hero.tagline,
+    foundingDate: String(new Date().getFullYear() - content.business.years_in_business),
     address: {
       "@type": "PostalAddress",
       addressLocality: content.business.city,
@@ -26,9 +36,25 @@ export function JsonLd() {
       latitude: 38.970333,
       longitude: -77.4217115,
     },
-    areaServed: content.business.service_area_zips.flatMap((c) =>
-      c.zips.map((z) => ({ "@type": "PostalCodeSpecification", postalCode: z, addressCountry: "US" })),
-    ),
+    areaServed: [
+      {
+        "@type": "GeoCircle",
+        geoMidpoint: {
+          "@type": "GeoCoordinates",
+          latitude: 38.970333,
+          longitude: -77.4217115,
+        },
+        geoRadius: String(content.business.service_area_radius_mi * 1609),
+      },
+      ...content.business.service_area_zips.map((c) => ({
+        "@type": "City" as const,
+        name: c.city,
+        containedInPlace: {
+          "@type": "AdministrativeArea" as const,
+          name: c.city === "Sterling" || c.city === "Leesburg" || c.city === "Ashburn" ? "Loudoun County" : "Fairfax County",
+        },
+      })),
+    ],
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: String(content.review_aggregate.weighted_rating),

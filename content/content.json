@@ -40,13 +40,14 @@
   "hero": {
     "tagline": "Outdoor work Sterling neighbors notice.",
     "subhead": "Lawn care, hardscape, design — one Sterling crew, one phone number, nine years in the neighborhood.",
-    "primary_cta": {"label": "Get a Free Estimate", "anchor": "#estimate"},
+    "primary_cta": {"label": "Free On-Site Walk-Through", "anchor": "#estimate"},
+    "primary_cta_micro": "Senior crew lead, real number, ~1-business-day response.",
     "secondary_cta": {"label": "Call (571) 308-3932", "tel": "+15713083932"},
     "trust_strip": [
       "Family-Run",
       "9 Years in NoVA",
       "Top Pro 2025",
-      "165+ Five-Star Reviews"
+      "165+ Reviews · 4.7★ avg"
     ],
     "image": "/images/hero.jpg"
   },
@@ -120,7 +121,7 @@
   "portfolio": [
     {
       "src": "/images/portfolio/fresh-mow.jpg",
-      "alt": "Freshly mowed lawn with striped lines and mature trees",
+      "alt": "Freshly mowed striped lawn with mature trees — KVA Landscaping, Sterling VA",
       "tags": ["lawn-care"],
       "caption": "Striped mow — large suburban lawn"
     },
@@ -132,13 +133,13 @@
     },
     {
       "src": "/images/portfolio/lawn-before.jpg",
-      "alt": "Patchy weedy lawn before KVA installed fresh sod",
+      "alt": "Patchy weedy front yard before KVA installed fresh sod — Sterling, VA",
       "tags": ["lawn-care"],
       "caption": "Same yard, before"
     },
     {
       "src": "/images/portfolio/brick-home-shrubs.jpg",
-      "alt": "Sculpted boxwood shrubs and mulched beds along a brick colonial home with paver walkway",
+      "alt": "Sculpted boxwood shrubs and mulched beds along a brick colonial with paver walkway — Sterling, VA",
       "tags": ["tree-shrub", "mulch-beds-planting", "hardscape-patios"],
       "caption": "Sculpted shrubs + paver walkway, brick colonial"
     }
@@ -195,7 +196,7 @@
     "yelp": {"rating": 5.0, "count": 3},
     "thumbtack": {"rating": 4.6, "count": 158, "badges": ["Top Pro 2023", "Top Pro 2025"]},
     "total_review_count": 168,
-    "weighted_rating": 4.65
+    "weighted_rating": 4.7
   },
   "about": {
     "headline": "One Sterling crew. Nine years. Every yard treated like a neighbor's.",
@@ -215,11 +216,12 @@
       {"name": "address", "label": "Property address", "type": "text", "required": true},
       {"name": "phone", "label": "Phone", "type": "tel", "required": true},
       {"name": "email", "label": "Email", "type": "email", "required": false},
-      {"name": "services", "label": "What do you need?", "type": "checkbox-group", "options": ["Lawn care / maintenance", "Mulch + beds + planting", "Hardscape / patio / walkway", "Tree + shrub work", "Irrigation install or repair", "Snow plowing (seasonal)", "Not sure — want to walk the property"], "required": true},
+      {"name": "services", "label": "What do you need?", "type": "checkbox-group", "options": ["Weekly mowing & lawn care", "Mulch + bed cleanup", "Paver patio or walkway (new or re-level)", "Plant trimming + tree/shrub work", "Sprinkler install or repair", "Snow plowing (next winter)", "Garden design / not sure — walk the property"], "required": true},
       {"name": "message", "label": "Anything else? (photos welcome)", "type": "textarea", "required": false}
     ],
     "submit_label": "Send",
-    "success_message": "Thanks — we got it. A senior crew lead will text or call you within one business day to set up a walk-through."
+    "response_pill": "Usually replies within an hour during business hours.",
+    "success_message": "Thanks — we got it. A senior crew lead will text or call you back within one business day to set up a walk-through."
   },
   "footer": {
     "tagline": "Sterling, VA · Family-run · 9 Years Local",
@@ -228,8 +230,8 @@
     "copyright_owner": "KVA Landscaping LLC"
   },
   "seo": {
-    "title": "KVA Landscaping — Sterling VA Lawn Care, Hardscape & Landscape Design",
-    "description": "Family-run landscape crew in Sterling, VA. Lawn care, paver patios, mulch, irrigation, snow plowing for Sterling, Herndon, Leesburg, Ashburn, Reston. 165+ five-star reviews, 9 years local.",
+    "title": "Landscaping in Sterling, VA — Lawn Care, Patios & Design | KVA",
+    "description": "Family-run Sterling, VA landscape crew. Paver patios, lawn care, mulch, irrigation, snow removal — 9 years serving Sterling, Herndon, Leesburg, Ashburn, Reston. 165+ reviews, 4.7★ average.",
     "keywords": ["Sterling VA landscaping", "landscaping Sterling Virginia", "paver patio Sterling VA", "lawn care Herndon", "landscape design Leesburg", "mulch installation Ashburn", "hardscape Loudoun County"]
   }
 }

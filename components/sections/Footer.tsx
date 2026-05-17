@@ -42,9 +42,9 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <h4 className="text-xs font-medium uppercase tracking-wider text-kva-stone">
+            <h3 className="text-xs font-medium uppercase tracking-wider text-kva-stone">
               Reach us
-            </h4>
+            </h3>
             <ul className="mt-4 space-y-2 text-sm text-kva-ink">
               <li>
                 <a href={`tel:${hero.secondary_cta.tel}`} className="hover:text-kva-forest">
@@ -63,7 +63,7 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-4">
-            <h4 className="text-xs font-medium uppercase tracking-wider text-kva-stone">Hours</h4>
+            <h3 className="text-xs font-medium uppercase tracking-wider text-kva-stone">Hours</h3>
             <dl className="mt-4 grid grid-cols-2 gap-x-3 gap-y-1 text-sm text-kva-stone">
               {Object.entries(business.hours).map(([day, hrs]) => (
                 <div key={day} className="contents">
@@ -79,9 +79,9 @@ export function Footer() {
         <div className="mt-12 border-t border-kva-stone-light pt-8">
           <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
             <div>
-              <h4 className="text-xs font-medium uppercase tracking-wider text-kva-stone">
+              <h3 className="text-xs font-medium uppercase tracking-wider text-kva-stone">
                 Service area
-              </h4>
+              </h3>
               <div className="mt-3 flex flex-wrap gap-2">
                 {footer.service_area_pills.map((p) => (
                   <span
@@ -94,9 +94,9 @@ export function Footer() {
               </div>
             </div>
             <div className="sm:text-right">
-              <h4 className="text-xs font-medium uppercase tracking-wider text-kva-stone">
+              <h3 className="text-xs font-medium uppercase tracking-wider text-kva-stone">
                 Payment
-              </h4>
+              </h3>
               <div className="mt-3 flex flex-wrap gap-2 sm:justify-end">
                 {footer.payment_pills.map((p) => (
                   <span

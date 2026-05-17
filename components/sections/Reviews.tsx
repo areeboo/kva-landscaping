@@ -19,10 +19,9 @@ export function Reviews() {
             What people say
           </span>
           <h2 className="mt-4 font-display text-balance text-4xl font-medium leading-tight tracking-tight text-kva-ink sm:text-5xl lg:text-6xl">
-            {content.review_aggregate.total_review_count}+ five-star reviews.
-            <br />
-            <span className="italic text-kva-forest" style={{ fontVariationSettings: '"opsz" 144, "wght" 400' }}>
-              Nine years of them.
+            {content.review_aggregate.total_review_count}+ reviews.{" "}
+            <span className="text-kva-stone">
+              {content.review_aggregate.weighted_rating.toFixed(1)}★ average across Google, Yelp & Thumbtack.
             </span>
           </h2>
         </div>
@@ -116,9 +115,16 @@ function RatingTile({
           ))}
         </div>
         {badge && (
-          <div className="mt-2 inline-flex items-center rounded-full bg-kva-forest/12 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-kva-forest">
+          <a
+            href={content.business.socials.thumbtack}
+            target="_blank"
+            rel="noopener"
+            title="Top Pro is awarded to ~3% of Thumbtack pros — verify on Thumbtack"
+            className="mt-2 inline-flex items-center gap-1 rounded-full bg-kva-forest/12 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-kva-forest transition-colors hover:bg-kva-forest/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest"
+          >
             {badge}
-          </div>
+            <span aria-hidden>↗</span>
+          </a>
         )}
       </div>
     </div>

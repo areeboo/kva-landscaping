@@ -66,7 +66,7 @@ export function Portfolio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ duration: 0.5, delay: idx * 0.06, ease: [0.16, 1, 0.3, 1] }}
-                className={`group relative overflow-hidden rounded-2xl ring-1 ring-kva-stone-light/70 ${layoutClass}`}
+                className={`group relative overflow-hidden rounded-2xl ring-1 ring-kva-stone-light/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-gold focus-visible:ring-offset-2 focus-visible:ring-offset-kva-cream-warm ${layoutClass}`}
                 aria-label={`View ${item.caption}`}
               >
                 <Image
@@ -135,7 +135,7 @@ export function Portfolio() {
             <button
               type="button"
               onClick={() => setActive(null)}
-              className="absolute right-5 top-5 inline-flex h-10 w-10 items-center justify-center rounded-full bg-kva-cream/10 text-kva-cream backdrop-blur transition-colors hover:bg-kva-cream/20"
+              className="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-kva-cream/10 text-kva-cream backdrop-blur transition-colors hover:bg-kva-cream/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-gold focus-visible:ring-offset-2 focus-visible:ring-offset-kva-ink sm:right-6 sm:top-6"
               aria-label="Close"
             >
               <X className="h-5 w-5" />
