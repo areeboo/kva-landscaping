@@ -1,11 +1,21 @@
 "use client";
 
-import { useActionState } from "react";
-import { CheckCircle2, Phone, ArrowRight } from "lucide-react";
+import { type ChangeEvent, type DragEvent, useActionState, useRef, useState } from "react";
+import { ArrowRight, CheckCircle2, ImagePlus, Phone, X } from "lucide-react";
 import { submitEstimate, type EstimateState } from "@/app/actions/submit-estimate";
 import { content } from "@/lib/content";
 
 const initialState: EstimateState = { status: "idle" };
+const MAX_PHOTO_COUNT = 5;
+const MAX_PHOTO_SIZE_BYTES = 5 * 1024 * 1024;
+const ACCEPTED_PHOTO_TYPES = new Set([
+  "image/jpeg",
+  "image/png",
+  "image/heic",
+  "image/heif",
+  "image/webp",
+]);
+const ACCEPTED_PHOTO_EXTENSIONS = [".jpg", ".jpeg", ".png", ".heic", ".heif", ".webp"];
 
 // Hide "Snow plowing (next winter)" between Apr and Oct so the form isn't asking about
 // a service the user can't currently book. We still keep it in content.json so the
@@ -179,6 +189,11 @@ export function EstimateForm() {
                   error={state.fieldErrors?.message?.[0]}
                 />
 
+                <PhotoUploadField
+                  disabled={pending}
+                  serverError={state.fieldErrors?.photos?.[0]}
+                />
+
                 {state.status === "error" && state.message && (
                   <p className="rounded-xl border border-kva-gold-deep/40 bg-kva-gold/10 px-3 py-2 text-sm text-kva-gold">
                     {state.message}
@@ -203,6 +218,175 @@ export function EstimateForm() {
       </div>
     </section>
   );
+}
+
+function PhotoUploadField({
+  disabled,
+  serverError,
+}: {
+  disabled?: boolean;
+  serverError?: string;
+}) {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [photos, setPhotos] = useState<File[]>([]);
+  const [clientError, setClientError] = useState<string>();
+  const [isDragging, setIsDragging] = useState(false);
+  const error = clientError ?? serverError;
+  const errorId = "photos-error";
+  const helperId = "photos-helper";
+
+  function syncInputFiles(nextPhotos: File[]) {
+    setPhotos(nextPhotos);
+
+    if (!inputRef.current) return;
+
+    const transfer = new DataTransfer();
+    nextPhotos.forEach((file) => transfer.items.add(file));
+    inputRef.current.files = transfer.files;
+  }
+
+  function addPhotos(files: FileList | File[]) {
+    const nextPhotos = [...photos, ...Array.from(files)];
+    const validationError = getPhotoValidationError(nextPhotos);
+
+    if (validationError) {
+      setClientError(validationError);
+      syncInputFiles(photos);
+      return;
+    }
+
+    setClientError(undefined);
+    syncInputFiles(nextPhotos);
+  }
+
+  function removePhoto(index: number) {
+    const nextPhotos = photos.filter((_, photoIndex) => photoIndex !== index);
+    setClientError(undefined);
+    syncInputFiles(nextPhotos);
+  }
+
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    if (!event.currentTarget.files) return;
+    addPhotos(event.currentTarget.files);
+  }
+
+  function handleDragOver(event: DragEvent<HTMLDivElement>) {
+    event.preventDefault();
+    if (disabled) return;
+    event.dataTransfer.dropEffect = "copy";
+    setIsDragging(true);
+  }
+
+  function handleDragLeave(event: DragEvent<HTMLDivElement>) {
+    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+      setIsDragging(false);
+    }
+  }
+
+  function handleDrop(event: DragEvent<HTMLDivElement>) {
+    event.preventDefault();
+    setIsDragging(false);
+    if (disabled || event.dataTransfer.files.length === 0) return;
+    addPhotos(event.dataTransfer.files);
+  }
+
+  return (
+    <div>
+      <div
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        onDrop={handleDrop}
+        className={`rounded-2xl border border-dashed p-4 transition-colors ${
+          isDragging
+            ? "border-kva-gold bg-kva-gold/10"
+            : "border-kva-cream/20 bg-kva-cream/[0.035]"
+        }`}
+      >
+        <input
+          ref={inputRef}
+          type="file"
+          name="photos"
+          multiple
+          accept="image/*,.heic,.heif"
+          onChange={handleChange}
+          aria-describedby={`${helperId}${error ? ` ${errorId}` : ""}`}
+          className="hidden"
+          disabled={disabled}
+        />
+
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-sm font-medium text-kva-cream">Photos</p>
+            <p id={helperId} className="mt-1 text-xs leading-relaxed text-kva-cream/65">
+              JPEG, PNG, HEIC, or WebP. Up to 5 photos, 5 MB each.
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => inputRef.current?.click()}
+            disabled={disabled}
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-kva-cream/20 bg-kva-cream/10 px-4 py-2 text-sm font-medium text-kva-cream transition-colors hover:border-kva-gold/50 hover:bg-kva-gold/15 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            <ImagePlus className="h-4 w-4 text-kva-gold" aria-hidden />
+            Add photos (optional)
+          </button>
+        </div>
+
+        {photos.length > 0 && (
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {photos.map((photo, index) => (
+              <li
+                key={`${photo.name}-${photo.size}-${photo.lastModified}-${index}`}
+                className="inline-flex max-w-full items-center gap-2 rounded-full border border-kva-cream/15 bg-kva-ink/45 px-3 py-1.5 text-xs text-kva-cream/85"
+              >
+                <span className="max-w-56 truncate">{photo.name}</span>
+                <button
+                  type="button"
+                  onClick={() => removePhoto(index)}
+                  disabled={disabled}
+                  aria-label={`Remove ${photo.name}`}
+                  className="rounded-full p-0.5 text-kva-cream/60 transition-colors hover:bg-kva-cream/10 hover:text-kva-cream disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  <X className="h-3.5 w-3.5" aria-hidden />
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      {error && (
+        <p id={errorId} className="mt-1.5 text-xs text-kva-gold-deep">
+          {error}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function getPhotoValidationError(photos: File[]) {
+  if (photos.length > MAX_PHOTO_COUNT) {
+    return "Add up to 5 photos.";
+  }
+
+  const oversized = photos.find((photo) => photo.size > MAX_PHOTO_SIZE_BYTES);
+  if (oversized) {
+    return `${oversized.name} is over 5 MB.`;
+  }
+
+  const unsupported = photos.find((photo) => !isAcceptedPhoto(photo));
+  if (unsupported) {
+    return `${unsupported.name} must be a JPEG, PNG, HEIC, or WebP image.`;
+  }
+
+  return undefined;
+}
+
+function isAcceptedPhoto(photo: File) {
+  if (ACCEPTED_PHOTO_TYPES.has(photo.type)) return true;
+
+  const name = photo.name.toLowerCase();
+  return ACCEPTED_PHOTO_EXTENSIONS.some((extension) => name.endsWith(extension));
 }
 
 function Field({

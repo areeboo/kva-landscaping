@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { content } from "@/lib/content";
@@ -13,19 +13,35 @@ const SECONDARY_INDICES = [0, 3]; // fresh-mow + brick-home-shrubs
 
 export function Portfolio() {
   const [active, setActive] = useState<number | null>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const restoreFocusRef = useRef<HTMLElement | null>(null);
   const items = content.portfolio;
 
   useEffect(() => {
     if (active === null) return;
+
+    const dialog = dialogRef.current;
+    if (dialog && !dialog.open) {
+      const activeElement = document.activeElement;
+      restoreFocusRef.current = activeElement instanceof HTMLElement ? activeElement : null;
+      dialog.showModal();
+      closeButtonRef.current?.focus({ preventScroll: true });
+    }
+
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setActive(null);
+      if (e.key === "Escape") {
+        e.preventDefault();
+        setActive(null);
+      }
       if (e.key === "ArrowRight") setActive((i) => (i === null ? 0 : (i + 1) % items.length));
       if (e.key === "ArrowLeft") setActive((i) => (i === null ? 0 : (i - 1 + items.length) % items.length));
     };
+    const previousBodyOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousBodyOverflow;
       window.removeEventListener("keydown", onKey);
     };
   }, [active, items.length]);
@@ -144,20 +160,31 @@ export function Portfolio() {
         </div>
       </div>
 
-      <AnimatePresence>
+      <AnimatePresence
+        onExitComplete={() => {
+          restoreFocusRef.current?.focus({ preventScroll: true });
+          restoreFocusRef.current = null;
+        }}
+      >
         {active !== null && (
-          <motion.div
+          <motion.dialog
+            ref={dialogRef}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-kva-ink/95 p-4 backdrop-blur"
-            onClick={() => setActive(null)}
-            role="dialog"
-            aria-modal="true"
+            className="fixed inset-0 z-[100] m-0 hidden h-dvh max-h-none w-dvw max-w-none items-center justify-center border-0 bg-kva-ink/95 p-4 text-inherit backdrop:bg-transparent backdrop-blur focus:outline-none [&[open]]:flex"
+            onCancel={(e) => {
+              e.preventDefault();
+              setActive(null);
+            }}
+            onClick={(e) => {
+              if (e.target === e.currentTarget) setActive(null);
+            }}
             aria-label={items[active].caption}
           >
             <button
+              ref={closeButtonRef}
               type="button"
               onClick={() => setActive(null)}
               className="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-kva-cream/10 text-kva-cream backdrop-blur transition-colors hover:bg-kva-cream/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-gold focus-visible:ring-offset-2 focus-visible:ring-offset-kva-ink sm:right-6 sm:top-6"
@@ -184,7 +211,7 @@ export function Portfolio() {
                 {items[active].caption}
               </p>
             </motion.div>
-          </motion.div>
+          </motion.dialog>
         )}
       </AnimatePresence>
     </section>

@@ -18,18 +18,9 @@ export function About() {
                 src="/images/portfolio/brick-home-shrubs.jpg"
                 alt="Sculpted shrubs and mulched beds in front of a brick colonial — KVA Landscaping work in Sterling, VA"
                 fill
-                sizes="(max-width: 1024px) 100vw, 40vw"
+                sizes="(max-width: 1024px) 100vw, 480px"
                 className="object-cover"
               />
-              {/* Quote card overlay */}
-              <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-kva-cream/20 bg-kva-ink/85 p-5 text-kva-cream backdrop-blur-md sm:inset-x-6 sm:bottom-6 sm:p-6">
-                <p className="font-display text-base italic leading-snug sm:text-lg">
-                  &ldquo;Same crew, same number, nine years. The work speaks for itself.&rdquo;
-                </p>
-                <p className="mt-2 text-xs uppercase tracking-wider text-kva-cream/60">
-                  KVA Landscaping · Sterling, VA
-                </p>
-              </div>
             </div>
           </div>
 
@@ -43,6 +34,11 @@ export function About() {
             <p className="mt-6 text-pretty text-lg leading-relaxed text-kva-stone">
               {content.about.body}
             </p>
+            {content.about.body_extra && (
+              <p className="mt-4 text-pretty text-base leading-relaxed text-kva-stone">
+                {content.about.body_extra}
+              </p>
+            )}
 
             <motion.div
               initial={{ opacity: 0, y: 12 }}

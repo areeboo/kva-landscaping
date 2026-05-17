@@ -1,6 +1,7 @@
 "use server";
 
-import { Resend } from "resend";
+import { Buffer } from "node:buffer";
+import { Resend, type Attachment } from "resend";
 import { estimateSchema } from "@/lib/estimate-schema";
 
 export type EstimateState = {
@@ -8,6 +9,18 @@ export type EstimateState = {
   message?: string;
   fieldErrors?: Record<string, string[]>;
 };
+
+const MAX_PHOTO_COUNT = 5;
+const MAX_PHOTO_SIZE_BYTES = 5 * 1024 * 1024;
+const MAX_TOTAL_PHOTO_SIZE_BYTES = MAX_PHOTO_COUNT * MAX_PHOTO_SIZE_BYTES;
+const ACCEPTED_PHOTO_TYPES = new Set([
+  "image/jpeg",
+  "image/png",
+  "image/heic",
+  "image/heif",
+  "image/webp",
+]);
+const ACCEPTED_PHOTO_EXTENSIONS = [".jpg", ".jpeg", ".png", ".heic", ".heif", ".webp"];
 
 export async function submitEstimate(
   _prev: EstimateState,
@@ -34,6 +47,21 @@ export async function submitEstimate(
 
   // Honeypot — silently succeed if filled
   if (parsed.data.website) return { status: "success" };
+
+  const photos = getSubmittedPhotos(formData);
+  const photoError = getPhotoValidationError(photos);
+
+  if (photoError) {
+    return {
+      status: "error",
+      message: "Please fix the fields below.",
+      fieldErrors: { photos: [photoError] },
+    };
+  }
+
+  if (process.env.NODE_ENV !== "production") {
+    console.log(`[KVA] Estimate photo count: ${photos.length}`);
+  }
 
   const key = process.env.RESEND_API_KEY;
   const to =
@@ -73,12 +101,15 @@ export async function submitEstimate(
 
   try {
     const resend = new Resend(key);
+    const attachments = await photosToAttachments(photos);
+
     await resend.emails.send({
       from,
       to: [to, ccOmni],
       replyTo: email || undefined,
       subject: `New estimate — ${name} · ${services[0]}${services.length > 1 ? ` +${services.length - 1}` : ""}`,
       html,
+      attachments: attachments.length > 0 ? attachments : undefined,
     });
     return { status: "success" };
   } catch (err) {
@@ -89,6 +120,51 @@ export async function submitEstimate(
         "Couldn't send right now. Try us directly at (571) 308-3932 or Kvalandscaping@gmail.com.",
     };
   }
+}
+
+function getSubmittedPhotos(formData: FormData) {
+  return formData
+    .getAll("photos")
+    .filter((value): value is File => value instanceof File && value.size > 0);
+}
+
+function getPhotoValidationError(photos: File[]) {
+  if (photos.length > MAX_PHOTO_COUNT) {
+    return "Add up to 5 photos.";
+  }
+
+  const oversized = photos.find((photo) => photo.size > MAX_PHOTO_SIZE_BYTES);
+  if (oversized) {
+    return `${oversized.name} is over 5 MB.`;
+  }
+
+  const totalSize = photos.reduce((sum, photo) => sum + photo.size, 0);
+  if (totalSize > MAX_TOTAL_PHOTO_SIZE_BYTES) {
+    return "Photos must total 25 MB or less.";
+  }
+
+  const unsupported = photos.find((photo) => !isAcceptedPhoto(photo));
+  if (unsupported) {
+    return `${unsupported.name} must be a JPEG, PNG, HEIC, or WebP image.`;
+  }
+
+  return undefined;
+}
+
+function isAcceptedPhoto(photo: File) {
+  if (ACCEPTED_PHOTO_TYPES.has(photo.type)) return true;
+
+  const name = photo.name.toLowerCase();
+  return ACCEPTED_PHOTO_EXTENSIONS.some((extension) => name.endsWith(extension));
+}
+
+async function photosToAttachments(photos: File[]): Promise<Attachment[]> {
+  return Promise.all(
+    photos.map(async (photo) => ({
+      filename: photo.name,
+      content: Buffer.from(await photo.arrayBuffer()),
+    })),
+  );
 }
 
 function escape(s: string) {

@@ -87,6 +87,32 @@ export function JsonLd() {
     publisher: { "@type": "Organization", name: r.source },
   }));
 
+  // Per-service Service[] schema, each linked to the LandscapingBusiness as provider
+  const serviceSchema = content.services.map((s) => ({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: s.title,
+    name: s.title,
+    description: s.blurb,
+    category: "Landscaping",
+    provider: { "@id": `${siteUrl}#business` },
+    areaServed: content.business.service_area_zips.map((c) => ({
+      "@type": "City" as const,
+      name: c.city,
+    })),
+    url: `${siteUrl}/services/${s.slug}`,
+  }));
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: content.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <>
       <script
@@ -96,6 +122,14 @@ export function JsonLd() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
     </>
   );

@@ -52,6 +52,11 @@ export function ServiceArea() {
                       </span>
                     ))}
                   </div>
+                  {"note" in city && city.note && (
+                    <p className="mt-4 border-t border-kva-stone-light pt-3 text-sm leading-relaxed text-kva-stone">
+                      {city.note}
+                    </p>
+                  )}
                 </motion.div>
               ))}
             </div>

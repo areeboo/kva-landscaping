@@ -19,11 +19,11 @@
     },
     "service_area_radius_mi": 10,
     "service_area_zips": [
-      {"city": "Sterling", "zips": ["20164", "20165", "20166"]},
-      {"city": "Herndon", "zips": ["20170", "20171"]},
-      {"city": "Leesburg", "zips": ["20175", "20176", "20177"]},
-      {"city": "Ashburn", "zips": ["20147", "20148"]},
-      {"city": "Reston", "zips": ["20190", "20191", "20194"]}
+      {"city": "Sterling", "zips": ["20164", "20165", "20166"], "note": "Weekly mow routes through Cascades, Sugarland Run, and Countryside. Paver patios and re-leveling work on the older split-levels off Algonkian Pkwy."},
+      {"city": "Herndon", "zips": ["20170", "20171"], "note": "Front-yard sod and seasonal mulch for the brick colonials near Folly Lick Stream. Tree and shrub maintenance in Chandon and Floris."},
+      {"city": "Leesburg", "zips": ["20175", "20176", "20177"], "note": "Hardscape installs and patio re-levels in River Creek, Lansdowne, and the historic district. Long-haul maintenance for property managers along Edwards Ferry Rd."},
+      {"city": "Ashburn", "zips": ["20147", "20148"], "note": "Landscape design and full-yard refreshes in Brambleton, Belmont Country Club, and Loudoun Valley. Irrigation work for the newer Goose Creek-side builds."},
+      {"city": "Reston", "zips": ["20190", "20191", "20194"], "note": "Mulch + bed cleanups and shrub shaping for HOA-managed properties near Lake Anne and South Lakes. Snow plow runs along Sunset Hills."}
     ],
     "years_in_business": 9,
     "payment_methods": ["Apple Pay", "Cash", "Check", "Credit Card", "PayPal", "Venmo", "Zelle"],
@@ -201,6 +201,7 @@
   "about": {
     "headline": "One Sterling crew. Nine years. Every yard treated like a neighbor's.",
     "body": "KVA Landscaping is a family-run crew out of Sterling, VA. We have been doing landscape work in Loudoun and Fairfax for nine years — the same crew, the same number, the same standards. From weekly mowing and seasonal mulch to full hardscape builds, we cover the whole yard with one team that already knows your property. Most of our work is for homeowners within ten miles of Sterling — Herndon, Leesburg, Ashburn, Reston — plus a handful of property managers we have been with for years. We show up when we said we would, we do good work, and we come back when you call.",
+    "body_extra": "Nine seasons in NoVA teach you things you can't shortcut. We know which sub-developments sit on heavy Loudoun clay (and how to amend beds so plantings actually take), which HOAs require pre-approval for paver work and how to get it through fast, and which freeze-thaw windows to schedule hardscape around so a patio still sits level five winters later. None of that ends up on a project bid — it just shows up in the way your yard holds up.",
     "credentials_callout": [
       "165+ Five-Star Reviews",
       "Thumbtack Top Pro 2023 + 2025",
@@ -208,6 +209,36 @@
       "Family-Run · Local Crew"
     ]
   },
+  "faqs": [
+    {
+      "q": "How fast do you respond to estimate requests?",
+      "a": "Usually within an hour during business hours (Mon–Sat 8 AM – 6 PM). A senior crew lead — not a call-center — texts or calls back. After hours, you'll hear from us first thing the next business morning."
+    },
+    {
+      "q": "What's the service area?",
+      "a": "About ten miles around Sterling: Sterling, Herndon, Leesburg, Ashburn, Reston, and parts of Great Falls. The crew lives nearby, so we're not driving in from Manassas. For large hardscape projects we'll travel further — ask."
+    },
+    {
+      "q": "Do you do snow plowing?",
+      "a": "Yes, seasonal — driveways, walkways, and ice melt application for residential and a handful of small commercial properties. Sign up by October to get on the route for the coming winter."
+    },
+    {
+      "q": "What does a paver patio cost?",
+      "a": "It depends — size, materials, drainage, whether we're tying into an existing walkway, whether the site needs grading. A typical residential 200–400 sq ft paver patio in NoVA falls in the $8K–$22K range. We give you a real number after walking the property, not a guess over the phone."
+    },
+    {
+      "q": "How often do you do lawn maintenance?",
+      "a": "Weekly is the default in growing season, bi-weekly works for some smaller yards or cooler stretches. Each cut includes edging and string-trimming. Spring and fall cleanups (leaf removal, bed prep) we schedule separately."
+    },
+    {
+      "q": "How do I pay?",
+      "a": "Apple Pay, cash, check, credit card, PayPal, Venmo, or Zelle. For larger hardscape jobs we typically take a deposit at scope approval and the balance on walk-through, but we'll structure it however works for you."
+    },
+    {
+      "q": "Are you licensed and insured?",
+      "a": "Yes, fully licensed in Virginia and insured. Happy to share certificates of insurance for HOA-managed properties or property managers who need them on file."
+    }
+  ],
   "estimate_form": {
     "headline": "Get a free, no-pressure estimate.",
     "subhead": "Tell us what you need and we will be in touch within a business day — usually faster. Sterling, Herndon, Leesburg, Ashburn, Reston, and around.",

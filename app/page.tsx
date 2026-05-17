@@ -6,8 +6,10 @@ import { ServiceArea } from "@/components/sections/ServiceArea";
 import { Process } from "@/components/sections/Process";
 import { Reviews } from "@/components/sections/Reviews";
 import { About } from "@/components/sections/About";
+import { FAQ } from "@/components/sections/FAQ";
 import { EstimateForm } from "@/components/sections/EstimateForm";
 import { Footer } from "@/components/sections/Footer";
+import { MobileStickyBar } from "@/components/sections/MobileStickyBar";
 
 export default function Home() {
   return (
@@ -20,8 +22,10 @@ export default function Home() {
       <Process />
       <Reviews />
       <About />
+      <FAQ />
       <EstimateForm />
       <Footer />
+      <MobileStickyBar />
     </>
   );
 }
