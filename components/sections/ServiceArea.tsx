@@ -14,10 +14,7 @@ export function ServiceArea() {
               Where we work
             </span>
             <h2 className="mt-4 font-display text-balance text-4xl font-medium leading-tight tracking-tight text-kva-ink sm:text-5xl">
-              About ten miles around{" "}
-              <span className="italic text-kva-forest" style={{ fontVariationSettings: '"opsz" 144, "wght" 400' }}>
-                Sterling.
-              </span>
+              About ten miles around Sterling.
             </h2>
             <p className="mt-5 text-pretty text-lg leading-relaxed text-kva-stone">
               The crew lives nearby — we are not driving in from Manassas. That is why we can be at your house in a day for an estimate and on the schedule the next week.
@@ -43,7 +40,7 @@ export function ServiceArea() {
                     <h3 className="font-display text-xl font-medium tracking-tight text-kva-ink">
                       {city.city}, VA
                     </h3>
-                    <span className="text-xs text-kva-stone/70">{city.zips.length} ZIPs</span>
+                    <span className="text-xs text-kva-stone">{city.zips.length} ZIPs</span>
                   </div>
                   <div className="mt-3 flex flex-wrap gap-1.5">
                     {city.zips.map((z) => (

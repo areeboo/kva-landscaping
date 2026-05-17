@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const estimateSchema = z.object({
   name: z.string().min(2, "Tell us your name.").max(80),
-  address: z.string().min(5, "Property address helps us scope the work.").max(200),
+  address: z.string().max(200).optional().or(z.literal("")),
   phone: z
     .string()
     .min(10, "Phone needs at least 10 digits.")

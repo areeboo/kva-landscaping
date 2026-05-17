@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   Droplets,
@@ -30,12 +31,7 @@ export function Services() {
             What we do
           </span>
           <h2 className="mt-4 font-display text-balance text-4xl font-medium leading-tight tracking-tight text-kva-ink sm:text-5xl lg:text-6xl">
-            From a single mow to a full
-            <br />
-            backyard rebuild —{" "}
-            <span className="italic text-kva-forest" style={{ fontVariationSettings: '"opsz" 144, "wght" 400' }}>
-              one crew.
-            </span>
+            From a single mow to a full backyard rebuild — one crew.
           </h2>
           <p className="mt-5 text-pretty text-lg leading-relaxed text-kva-stone">
             Nine years of building outdoor spaces that hold up year after year — not just mow and run. Pick what you need; the same crew handles all of it.
@@ -52,7 +48,7 @@ export function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: idx * 0.05, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative flex flex-col bg-kva-cream p-7 transition-colors hover:bg-kva-cream-warm sm:p-8"
+                className="group relative flex flex-col bg-kva-cream p-7 transition-colors hover:bg-kva-cream-warm focus-within:bg-kva-cream-warm sm:p-8"
               >
                 <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-kva-forest/8 text-kva-forest ring-1 ring-kva-forest/15 transition-transform group-hover:scale-105">
                   <Icon className="h-5 w-5" aria-hidden />
@@ -63,7 +59,7 @@ export function Services() {
                 <p className="mt-3 text-pretty text-[15px] leading-relaxed text-kva-stone">
                   {svc.blurb}
                 </p>
-                <ul className="mt-5 space-y-2 text-sm text-kva-stone/90">
+                <ul className="mt-5 space-y-2 text-sm text-kva-stone">
                   {svc.details.slice(0, 4).map((d) => (
                     <li key={d} className="flex items-start gap-2">
                       <span className="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-kva-forest" aria-hidden />
@@ -71,6 +67,13 @@ export function Services() {
                     </li>
                   ))}
                 </ul>
+                <Link
+                  href={`/services/${svc.slug}`}
+                  className="mt-6 inline-flex items-center gap-1 self-start rounded text-sm font-medium text-kva-forest underline-offset-4 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2"
+                  aria-label={`Learn more about ${svc.title}`}
+                >
+                  Learn more about {svc.title.toLowerCase()} <span aria-hidden>→</span>
+                </Link>
               </motion.article>
             );
           })}

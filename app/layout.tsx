@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { content } from "@/lib/content";
 import { JsonLd } from "@/components/site/JsonLd";
+import { MotionProvider } from "@/components/site/MotionProvider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -72,7 +73,9 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
-        <main className="flex-1">{children}</main>
+        <MotionProvider>
+          <main className="flex-1">{children}</main>
+        </MotionProvider>
         <Analytics />
         <SpeedInsights />
         <JsonLd />

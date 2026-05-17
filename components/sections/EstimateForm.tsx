@@ -7,9 +7,22 @@ import { content } from "@/lib/content";
 
 const initialState: EstimateState = { status: "idle" };
 
+// Hide "Snow plowing (next winter)" between Apr and Oct so the form isn't asking about
+// a service the user can't currently book. We still keep it in content.json so the
+// schema-of-record doesn't drift.
+function isWinterBookingSeason(now: Date = new Date()): boolean {
+  const month = now.getMonth(); // 0-indexed
+  return month >= 9 || month <= 2; // Oct (9) – Mar (2) inclusive
+}
+
 export function EstimateForm() {
   const [state, formAction, pending] = useActionState(submitEstimate, initialState);
   const { estimate_form, business } = content;
+  const allServiceOptions =
+    estimate_form.fields.find((f) => f.name === "services")?.options ?? [];
+  const visibleServiceOptions = isWinterBookingSeason()
+    ? allServiceOptions
+    : allServiceOptions.filter((o) => !o.toLowerCase().includes("snow plowing"));
 
   return (
     <section
@@ -95,63 +108,70 @@ export function EstimateForm() {
                     label="Your name"
                     name="name"
                     required
+                    autoComplete="name"
                     error={state.fieldErrors?.name?.[0]}
                   />
                   <Field
                     label="Phone"
                     name="phone"
                     type="tel"
+                    inputMode="tel"
+                    autoComplete="tel"
                     required
                     placeholder="(703) 555-0100"
+                    helper="Text or call is fine — whichever you prefer."
                     error={state.fieldErrors?.phone?.[0]}
                   />
                 </div>
                 <Field
-                  label="Property address"
+                  label="Property address or ZIP"
                   name="address"
-                  required
-                  placeholder="123 Main St, Sterling VA 20165"
+                  autoComplete="street-address"
+                  placeholder="Street, or just a ZIP — we'll confirm when we call"
+                  helper="Street or just a ZIP is fine — we'll confirm when we call."
                   error={state.fieldErrors?.address?.[0]}
                 />
                 <Field
                   label="Email (optional)"
                   name="email"
                   type="email"
+                  inputMode="email"
+                  autoComplete="email"
                   error={state.fieldErrors?.email?.[0]}
                 />
 
-                <fieldset>
+                <fieldset
+                  aria-describedby={state.fieldErrors?.services ? "services-error" : undefined}
+                >
                   <legend className="mb-2 block text-sm font-medium text-kva-cream">
                     What do you need?{" "}
-                    <span className="text-kva-cream/60">(pick all that apply)</span>
+                    <span className="text-kva-cream/65">(pick all that apply)</span>
                   </legend>
                   <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                    {estimate_form.fields
-                      .find((f) => f.name === "services")
-                      ?.options?.map((opt) => (
-                        <label
-                          key={opt}
-                          className="group flex cursor-pointer items-center gap-3 rounded-xl border border-kva-cream/15 bg-kva-cream/5 px-3 py-2.5 text-sm text-kva-cream/85 transition-colors has-[:checked]:border-kva-gold/60 has-[:checked]:bg-kva-gold/10 has-[:checked]:text-kva-cream"
-                        >
-                          <input
-                            type="checkbox"
-                            name="services"
-                            value={opt}
-                            className="h-4 w-4 flex-none rounded border-kva-cream/30 bg-kva-cream/5 text-kva-gold focus:ring-kva-gold focus:ring-offset-kva-ink"
-                          />
-                          <span className="leading-snug">{opt}</span>
-                        </label>
-                      ))}
+                    {visibleServiceOptions.map((opt) => (
+                      <label
+                        key={opt}
+                        className="group flex cursor-pointer items-center gap-3 rounded-xl border border-kva-cream/15 bg-kva-cream/5 px-3 py-2.5 text-sm text-kva-cream/90 transition-colors has-[:checked]:border-kva-gold/60 has-[:checked]:bg-kva-gold/10 has-[:checked]:text-kva-cream focus-within:border-kva-gold/40"
+                      >
+                        <input
+                          type="checkbox"
+                          name="services"
+                          value={opt}
+                          className="h-4 w-4 flex-none rounded border-kva-cream/30 bg-kva-cream/5 text-kva-gold focus:ring-kva-gold focus:ring-offset-kva-ink"
+                        />
+                        <span className="leading-snug">{opt}</span>
+                      </label>
+                    ))}
                   </div>
                   {state.fieldErrors?.services && (
-                    <p className="mt-1.5 text-xs text-kva-gold-deep">
+                    <p id="services-error" className="mt-1.5 text-xs text-kva-gold-deep">
                       {state.fieldErrors.services[0]}
                     </p>
                   )}
                 </fieldset>
 
                 <Field
-                  label="Anything else? (photos welcome)"
+                  label="Anything else?"
                   name="message"
                   as="textarea"
                   rows={4}
@@ -192,8 +212,11 @@ function Field({
   required,
   placeholder,
   error,
+  helper,
   as,
   rows,
+  autoComplete,
+  inputMode,
 }: {
   label: string;
   name: string;
@@ -201,16 +224,22 @@ function Field({
   required?: boolean;
   placeholder?: string;
   error?: string;
+  helper?: string;
   as?: "input" | "textarea";
   rows?: number;
+  autoComplete?: string;
+  inputMode?: "text" | "tel" | "email" | "url" | "search" | "numeric" | "decimal" | "none";
 }) {
+  const errId = `${name}-error`;
+  const helperId = `${name}-helper`;
+  const describedBy = [error ? errId : null, helper ? helperId : null].filter(Boolean).join(" ") || undefined;
   const fieldClass =
-    "block w-full rounded-xl border border-kva-cream/15 bg-kva-cream/[0.06] px-4 py-3 text-[15px] text-kva-cream placeholder:text-kva-cream/40 transition-colors focus:border-kva-gold/60 focus:bg-kva-cream/[0.08] focus:outline-none";
+    "block w-full rounded-xl border border-kva-cream/15 bg-kva-cream/[0.06] px-4 py-3 text-[15px] text-kva-cream placeholder:text-kva-cream/45 transition-colors focus:border-kva-gold/60 focus:bg-kva-cream/[0.08] focus:outline-none";
   return (
     <label className="block">
       <span className="mb-1.5 block text-sm font-medium text-kva-cream">
         {label}
-        {required && <span className="ml-1 text-kva-gold">*</span>}
+        {required && <span className="ml-1 text-kva-gold" aria-hidden>*</span>}
       </span>
       {as === "textarea" ? (
         <textarea
@@ -218,6 +247,9 @@ function Field({
           required={required}
           placeholder={placeholder}
           rows={rows}
+          autoComplete={autoComplete}
+          aria-invalid={error ? true : undefined}
+          aria-describedby={describedBy}
           className={fieldClass}
         />
       ) : (
@@ -226,10 +258,19 @@ function Field({
           name={name}
           required={required}
           placeholder={placeholder}
+          autoComplete={autoComplete}
+          inputMode={inputMode}
+          aria-invalid={error ? true : undefined}
+          aria-describedby={describedBy}
           className={fieldClass}
         />
       )}
-      {error && <p className="mt-1.5 text-xs text-kva-gold-deep">{error}</p>}
+      {helper && !error && (
+        <p id={helperId} className="mt-1.5 text-xs text-kva-cream/65">{helper}</p>
+      )}
+      {error && (
+        <p id={errId} className="mt-1.5 text-xs text-kva-gold-deep">{error}</p>
+      )}
     </label>
   );
 }

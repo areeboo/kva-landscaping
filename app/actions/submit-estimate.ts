@@ -57,7 +57,7 @@ export async function submitEstimate(
   const html = `
     <h2 style="font-family:Georgia,serif;color:#1e3a2a;margin:0 0 12px">New estimate request — KVA Landscaping</h2>
     <p style="margin:4px 0"><strong>From:</strong> ${escape(name)}</p>
-    <p style="margin:4px 0"><strong>Property:</strong> ${escape(address)}</p>
+    ${address ? `<p style="margin:4px 0"><strong>Property:</strong> ${escape(address)}</p>` : ""}
     <p style="margin:4px 0"><strong>Phone:</strong> <a href="tel:${escape(phone)}">${escape(phone)}</a></p>
     ${email ? `<p style="margin:4px 0"><strong>Email:</strong> <a href="mailto:${escape(email)}">${escape(email)}</a></p>` : ""}
     <p style="margin:12px 0 4px"><strong>What they need:</strong></p>

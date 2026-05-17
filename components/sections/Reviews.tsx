@@ -63,7 +63,7 @@ export function Reviews() {
               <figcaption className="mt-5 flex items-center justify-between border-t border-kva-stone-light/70 pt-4 text-sm">
                 <div>
                   <div className="font-medium text-kva-ink">{r.author}</div>
-                  <div className="text-xs text-kva-stone/80">{r.date}</div>
+                  <div className="text-xs text-kva-stone">{r.date}</div>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <span className="flex items-center gap-0.5">

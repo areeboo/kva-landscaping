@@ -12,10 +12,7 @@ export function Process() {
             How it goes
           </span>
           <h2 className="mt-4 font-display text-balance text-4xl font-medium leading-tight tracking-tight text-kva-cream sm:text-5xl">
-            How a KVA job{" "}
-            <span className="italic text-kva-gold" style={{ fontVariationSettings: '"opsz" 144, "wght" 400' }}>
-              goes.
-            </span>
+            How a KVA job goes.
           </h2>
         </div>
 
