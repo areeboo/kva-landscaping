@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { content } from "@/lib/content";
+import { BeforeAfterSlider } from "@/components/portfolio/BeforeAfterSlider";
 
 // content.json order: 0=fresh-mow, 1=lawn-after, 2=lawn-before, 3=brick-home-shrubs
 const BEFORE_INDEX = 2;
@@ -65,33 +66,20 @@ export function Portfolio() {
           </p>
         </div>
 
-        {/* Before/After featured pair */}
+        {/* Before/After interactive comparison */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-30px" }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-12 overflow-hidden rounded-3xl ring-1 ring-kva-stone-light/70"
+          className="mt-12"
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2">
-            <BeforeAfterTile
-              item={items[BEFORE_INDEX]}
-              label="Before"
-              onClick={() => setActive(BEFORE_INDEX)}
-              borderClass="border-r-0 sm:border-r border-kva-stone-light"
-            />
-            <BeforeAfterTile
-              item={items[AFTER_INDEX]}
-              label="After"
-              onClick={() => setActive(AFTER_INDEX)}
-              borderClass=""
-              highlight
-            />
-          </div>
-          <div className="bg-kva-cream-warm px-5 py-4 text-center text-sm text-kva-stone sm:px-8">
-            <span className="font-medium text-kva-ink">Sterling front-yard sod install</span>{" "}
-            — patchy spring lawn to fresh-laid, edged sod in a single weekend.
-          </div>
+          <BeforeAfterSlider
+            before={{ src: items[BEFORE_INDEX].src, alt: items[BEFORE_INDEX].alt }}
+            after={{ src: items[AFTER_INDEX].src, alt: items[AFTER_INDEX].alt }}
+            eyebrow="Sterling front-yard sod install"
+            caption="Patchy spring lawn → fresh-laid, edged sod in a single weekend."
+          />
         </motion.div>
 
         {/* Secondary 2-up */}
@@ -218,41 +206,3 @@ export function Portfolio() {
   );
 }
 
-function BeforeAfterTile({
-  item,
-  label,
-  onClick,
-  borderClass,
-  highlight = false,
-}: {
-  item: { src: string; alt: string; caption: string };
-  label: "Before" | "After";
-  onClick: () => void;
-  borderClass: string;
-  highlight?: boolean;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={`group relative aspect-[4/3] overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-kva-gold ${borderClass}`}
-      aria-label={`View ${label.toLowerCase()}: ${item.caption}`}
-    >
-      <Image
-        src={item.src}
-        alt={item.alt}
-        fill
-        sizes="(max-width: 640px) 100vw, 50vw"
-        className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-kva-ink/45 via-transparent to-transparent" />
-      <span
-        className={`absolute left-4 top-4 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider sm:left-5 sm:top-5 ${
-          highlight ? "bg-kva-gold text-kva-ink" : "bg-kva-cream/95 text-kva-ink"
-        }`}
-      >
-        {label}
-      </span>
-    </button>
-  );
-}
