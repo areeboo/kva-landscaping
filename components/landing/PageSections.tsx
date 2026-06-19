@@ -16,7 +16,7 @@ export function DetailHero({
   chips: string[];
 }) {
   return (
-    <section className="relative isolate overflow-hidden bg-kva-ink pt-28 text-kva-cream sm:pt-32">
+    <section className="relative isolate overflow-hidden bg-kva-ink pt-10 text-kva-cream sm:pt-12">
       <Image
         src="/images/portfolio/fresh-mow.jpg"
         alt=""

@@ -118,6 +118,15 @@
   .ring-kva-soft {
     box-shadow: 0 1px 0 0 oklch(0.20 0.02 240 / 0.04), 0 0 0 1px oklch(0.20 0.02 240 / 0.06);
   }
+
+  /* Horizontal carousel track — hide the scrollbar, keep swipe/scroll behavior */
+  .kva-scroll-track {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .kva-scroll-track::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer components {
