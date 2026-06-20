@@ -41,14 +41,14 @@ export function Hero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
               href={hero.primary_cta.anchor}
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-kva-gold px-6 py-3.5 text-base font-semibold text-kva-ink shadow-lg shadow-kva-gold/25 transition-all hover:-translate-y-0.5 hover:bg-kva-gold-deep hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-gold focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest-deep"
+              className="group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-kva-gold px-6 py-3.5 text-base font-semibold text-kva-ink shadow-lg shadow-kva-gold/25 transition-all hover:-translate-y-0.5 hover:bg-kva-gold-deep hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-gold focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest-deep"
             >
               {hero.primary_cta.label}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
             </Link>
             <a
               href={`tel:${hero.secondary_cta.tel}`}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-kva-cream/55 bg-kva-forest-deep/30 px-6 py-3.5 text-base font-semibold text-kva-cream backdrop-blur transition-colors hover:border-kva-cream hover:bg-kva-forest-deep/55 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-cream focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest-deep"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-kva-cream/55 bg-kva-forest-deep/30 px-6 py-3.5 text-base font-semibold text-kva-cream backdrop-blur transition-colors hover:border-kva-cream hover:bg-kva-forest-deep/55 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-cream focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest-deep"
             >
               <Phone className="h-4 w-4" aria-hidden />
               {hero.secondary_cta.label}

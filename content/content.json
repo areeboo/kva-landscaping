@@ -91,7 +91,7 @@
       "blurb": "Install new sprinkler systems or fix the one that's been spraying the driveway since 2019. Seasonal start-up and shutdown too.",
       "details": ["New system install", "Repair + zone diagnosis", "Seasonal start-up", "Winterization", "Drainage solutions"],
       "icon": "Droplets",
-      "image": "/images/projects/project-landscape.webp"
+      "image": "/images/irrigation.jpg"
     },
     {
       "slug": "seasonal",
@@ -99,7 +99,7 @@
       "blurb": "Same crew, four seasons. Winter snow + ice clearing for driveways and walkways. Spring through fall: water features and decorative installs.",
       "details": ["Driveway + walkway snow plowing", "Ice melt application", "Water feature design + install", "Outdoor lighting"],
       "icon": "Snowflake",
-      "image": "/images/seasonal-cleanup.webp"
+      "image": "/images/snow-plowing.jpg"
     }
   ],
   "process": [

@@ -231,13 +231,13 @@ export function CtaStrip({
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href="/#estimate"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-kva-gold px-6 py-3 text-base font-medium text-kva-ink transition-colors hover:bg-kva-gold-deep hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-gold focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-kva-gold px-6 py-3 text-base font-medium text-kva-ink transition-colors hover:bg-kva-gold-deep hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-gold focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest"
             >
               Get a free walk-through <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
             <a
               href={`tel:${content.hero.secondary_cta.tel}`}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-kva-cream/35 px-6 py-3 text-base font-medium text-kva-cream transition-colors hover:bg-kva-cream hover:text-kva-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-cream focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-kva-cream/35 px-6 py-3 text-base font-medium text-kva-cream transition-colors hover:bg-kva-cream hover:text-kva-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-cream focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest"
             >
               <Phone className="h-4 w-4" aria-hidden />
               {content.business.phone_primary}

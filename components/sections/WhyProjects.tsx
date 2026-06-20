@@ -62,14 +62,14 @@ export function WhyProjects() {
           <div className="mt-6">
             <BeforeAfterSlider
               before={{
-                src: "/images/projects/project-before.webp",
-                alt: "Backyard before KVA Landscaping's work",
+                src: "/images/portfolio/lawn-before.jpg",
+                alt: "Patchy, weedy front yard before KVA installed fresh sod — Sterling, VA",
               }}
               after={{
-                src: "/images/projects/project-after.webp",
-                alt: "Finished landscaped backyard by KVA Landscaping",
+                src: "/images/portfolio/lawn-after.jpg",
+                alt: "Fresh sod and a clean, healthy lawn installed by KVA — Sterling, VA",
               }}
-              caption="Full backyard transformation — Sterling, VA"
+              caption="New sod install — Sterling front yard"
               eyebrow="Before / After"
             />
           </div>
