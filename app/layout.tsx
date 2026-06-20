@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Geist } from "next/font/google";
+import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { content } from "@/lib/content";
@@ -7,18 +7,14 @@ import { JsonLd } from "@/components/site/JsonLd";
 import { MotionProvider } from "@/components/site/MotionProvider";
 import "./globals.css";
 
-const geistSans = Geist({
+// Body/UI sans — matches the shared concept's `--sans: Inter, ...`.
+const inter = Inter({
   variable: "--font-kva-sans",
   subsets: ["latin"],
   display: "swap",
 });
-
-const fraunces = Fraunces({
-  variable: "--font-kva-display",
-  subsets: ["latin"],
-  display: "swap",
-  axes: ["opsz"],
-});
+// Display serif is Georgia (system) to match the concept's `--serif: Georgia, ...`;
+// wired via --font-kva-display in globals.css, so no web font is loaded for it.
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://kvalandscaping.com";
@@ -69,7 +65,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${inter.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">

@@ -25,6 +25,9 @@
   --accent-foreground: var(--kva-ink);
   --ring: var(--kva-forest);
 
+  /* Typography — match the shared concept: Georgia display serif + Inter body */
+  --font-kva-display: Georgia, "Times New Roman", serif;
+
   --radius: 0.625rem;
 }
 
@@ -88,15 +91,13 @@
 
 @layer utilities {
   .font-display {
-    font-family: var(--font-display), Georgia, serif;
-    font-variation-settings: "opsz" 144;
-    letter-spacing: -0.02em;
+    font-family: var(--font-display), Georgia, "Times New Roman", serif;
+    letter-spacing: -0.015em;
   }
 
   .font-display-tight {
-    font-family: var(--font-display), Georgia, serif;
-    font-variation-settings: "opsz" 144, "wght" 500;
-    letter-spacing: -0.025em;
+    font-family: var(--font-display), Georgia, "Times New Roman", serif;
+    letter-spacing: -0.02em;
   }
 
   .text-balance {

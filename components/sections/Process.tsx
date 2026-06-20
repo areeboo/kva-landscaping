@@ -28,7 +28,6 @@ export function Process() {
             >
               <span
                 className="font-display text-7xl font-medium leading-none text-kva-gold/70 sm:text-8xl"
-                style={{ fontVariationSettings: '"opsz" 144, "wght" 400' }}
                 aria-hidden
               >
                 {String(step.step).padStart(2, "0")}
