@@ -37,7 +37,7 @@ export function EstimateForm() {
   return (
     <section
       id="estimate"
-      className="relative scroll-mt-24 overflow-hidden bg-kva-ink py-24 text-kva-cream sm:py-28 lg:py-32"
+      className="relative scroll-mt-24 overflow-hidden bg-kva-ink py-16 text-kva-cream sm:py-28 lg:py-32"
     >
       {/* Background flourish */}
       <div className="pointer-events-none absolute inset-0 -z-10 opacity-25">
@@ -203,7 +203,7 @@ export function EstimateForm() {
                 <button
                   type="submit"
                   disabled={pending}
-                  className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-kva-gold px-6 py-3.5 text-base font-medium text-kva-ink shadow-lg shadow-kva-gold/20 transition-all hover:bg-kva-gold-deep hover:text-kva-cream hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+                  className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-kva-green px-6 py-3.5 text-base font-semibold text-kva-cream shadow-sm transition-all hover:-translate-y-0.5 hover:bg-kva-green-deep hover:text-kva-cream hover:shadow-md active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-green focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest-deep disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
                 >
                   {pending ? "Sending…" : "Send"}
                   {!pending && <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />}

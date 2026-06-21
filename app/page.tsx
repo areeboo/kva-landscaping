@@ -7,7 +7,6 @@ import { ServiceAreaMap } from "@/components/sections/ServiceAreaMap";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
 import { FinalCta } from "@/components/sections/FinalCta";
-import { EstimateForm } from "@/components/sections/EstimateForm";
 import { Footer } from "@/components/sections/Footer";
 import { MobileStickyBar } from "@/components/sections/MobileStickyBar";
 
@@ -23,7 +22,6 @@ export default function Home() {
       <Testimonials />
       <FAQ />
       <FinalCta />
-      <EstimateForm />
       <Footer />
       <MobileStickyBar />
     </>

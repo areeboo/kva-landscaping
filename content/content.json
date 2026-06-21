@@ -27,6 +27,11 @@
       {"city": "Great Falls", "zips": ["22066"], "note": "Larger wooded lots near Great Falls Village, River Bend, and Georgetown Pike. Drainage, deer pressure, long driveways, and freeze-thaw movement matter on mulch beds, patios, and stone walkways."}
     ],
     "years_in_business": 9,
+    "owner": "Victor Amaya",
+    "team_size": 10,
+    "class_a_contractor": true,
+    "background_checked": true,
+    "jobs_completed": 206,
     "payment_methods": ["Apple Pay", "Cash", "Check", "Credit Card", "PayPal", "Venmo", "Zelle"],
     "credentials": [
       "Thumbtack Top Pro 2023",
@@ -41,7 +46,7 @@
   "hero": {
     "tagline": "Outdoor work Sterling neighbors notice.",
     "subhead": "Lawn care, hardscape, design — one Sterling crew, one phone number, nine years in the neighborhood.",
-    "primary_cta": {"label": "Free On-Site Walk-Through", "anchor": "#estimate"},
+    "primary_cta": {"label": "Free On-Site Walk-Through", "anchor": "/estimate"},
     "primary_cta_micro": "Senior crew lead, real number, ~1-business-day response.",
     "secondary_cta": {"label": "Call (571) 308-3932", "tel": "+15713083932"},
     "trust_strip": [
@@ -54,50 +59,155 @@
   },
   "services": [
     {
-      "slug": "lawn-care",
-      "title": "Lawn Care & Maintenance",
-      "blurb": "Weekly mowing, edging, trimming, and weed control. Striped lines, sharp borders, no torn-up sod.",
-      "details": ["Weekly + bi-weekly mowing", "Edging + trimming", "Weed control", "Spring + fall cleanups", "Aeration + overseeding"],
+      "slug": "lawn-mowing",
+      "category": "Lawn Care",
+      "title": "Lawn Mowing & Trimming",
+      "blurb": "Weekly or bi-weekly mowing with crisp edging, string-trimming, and a clean striped finish.",
+      "details": ["Weekly + bi-weekly mowing", "Edging + string-trimming", "Clippings mulched or hauled", "Sharp, striped finish"],
       "icon": "Scissors",
-      "image": "/images/lawn-care.webp"
+      "image": "/images/portfolio/fresh-mow.jpg"
     },
     {
-      "slug": "mulch-beds-planting",
-      "title": "Mulch, Beds & Planting",
-      "blurb": "Fresh mulch installed clean. Beds reshaped, plants chosen for NoVA seasons, gardens that look right in May and November.",
-      "details": ["Mulch (hardwood + dyed)", "Bed reshaping + edging", "Seasonal planting", "Sod installation", "Weed removal + cleanup"],
+      "slug": "full-service-lawn-care",
+      "category": "Lawn Care",
+      "title": "Full-Service Lawn Care",
+      "blurb": "Your whole lawn on one schedule — mowing plus weed control, aeration, overseeding, and seasonal cleanups.",
+      "details": ["Mowing + trimming + edging", "Weed control", "Aeration + overseeding", "Spring + fall cleanups"],
       "icon": "Sprout",
+      "image": "/images/portfolio/lawn-after.jpg"
+    },
+    {
+      "slug": "mulching",
+      "category": "Planting & Beds",
+      "title": "Mulching",
+      "blurb": "Fresh hardwood or dyed mulch installed clean, at the right depth, with crisp bed edges. Priced per square foot.",
+      "details": ["Hardwood + dyed mulch", "Clean depth + bed edging", "Weed-prep first", "Hard surfaces cleaned after"],
+      "icon": "Layers",
+      "image": "/images/projects/kva-mulch-arborvitae-colonial.jpg"
+    },
+    {
+      "slug": "weeding",
+      "category": "Planting & Beds",
+      "title": "Weeding & Bed Cleanup",
+      "blurb": "Beds cleared, weeded, and edged — herbicide-free on request, one-time or on a recurring schedule.",
+      "details": ["Hand + tool weeding", "Herbicide-free option", "Bed cleanup + haul-away", "One-time or recurring"],
+      "icon": "Shovel",
+      "image": "/images/projects/kva-mulch-sideyard.jpg"
+    },
+    {
+      "slug": "gardening",
+      "category": "Planting & Beds",
+      "title": "Gardening & Garden Design",
+      "blurb": "Planting plans and seasonal gardens designed for Northern Virginia sun, shade, and clay.",
+      "details": ["Garden design", "Seasonal planting", "Bed layout", "Plant selection"],
+      "icon": "Flower2",
       "image": "/images/mulch-beds.webp"
     },
     {
-      "slug": "hardscape-patios",
-      "title": "Hardscape & Patios",
-      "blurb": "Paver patios, walkways, and stone work that stay level for years — built once, the right way, by a crew that has been doing it for nine seasons.",
-      "details": ["Paver patios", "Walkways + steps", "Retaining walls", "Re-leveling existing hardscape", "Stone borders"],
+      "slug": "tree-shrub-planting",
+      "category": "Planting & Beds",
+      "title": "Tree & Shrub Planting",
+      "blurb": "New trees and shrubs sited, spaced, and planted so they actually take and stay maintainable.",
+      "details": ["Tree planting", "Shrub installation", "Siting + spacing", "Soil prep + amendment"],
+      "icon": "Trees",
+      "image": "/images/portfolio/brick-home-shrubs.jpg"
+    },
+    {
+      "slug": "sod-installation",
+      "category": "Planting & Beds",
+      "title": "Sod Installation",
+      "blurb": "Fresh sod laid over prepped, graded soil for an instant, even lawn.",
+      "details": ["Old-sod removal", "Grading + soil prep", "Sod laying", "Watering guidance"],
+      "icon": "LayoutGrid",
+      "image": "/images/portfolio/lawn-after.jpg"
+    },
+    {
+      "slug": "paver-patios",
+      "category": "Hardscape",
+      "title": "Paver Patios & Remodels",
+      "blurb": "Paver patios built or remodeled with a proper base and drainage, so they stay level for years.",
+      "details": ["New paver patios", "Patio remodels + additions", "Base + drainage", "Fire pits + seat walls"],
       "icon": "Layers",
       "image": "/images/outdoor-living.webp"
     },
     {
-      "slug": "tree-shrub",
-      "title": "Tree & Shrub Care",
-      "blurb": "Sculpted shrubs, healthy trees, clean lines. Pruning, shaping, removal — done by a crew who knows what each species wants.",
-      "details": ["Pruning + shaping", "Tree removal", "Shrub installation", "Storm cleanup", "Stump removal"],
+      "slug": "landscape-design",
+      "category": "Hardscape",
+      "title": "Outdoor Landscaping & Design",
+      "blurb": "Full-yard design tying hardscape, flagstone walkways, beds, and plantings into one plan.",
+      "details": ["Full-yard design", "Flagstone walkways + steps", "Hardscape layout", "Drainage + grading"],
+      "icon": "PencilRuler",
+      "image": "/images/projects/kva-walkway-to-patio.jpg"
+    },
+    {
+      "slug": "tree-trimming-removal",
+      "category": "Tree & Shrub",
+      "title": "Tree Trimming & Removal",
+      "blurb": "Pruning, trimming, and safe removals — stumps and storm cleanup included.",
+      "details": ["Pruning + shaping", "Tree removal", "Stump removal", "Storm cleanup"],
       "icon": "TreePine",
       "image": "/images/landscape-installation.webp"
     },
     {
-      "slug": "irrigation",
-      "title": "Irrigation Systems",
-      "blurb": "Install new sprinkler systems or fix the one that's been spraying the driveway since 2019. Seasonal start-up and shutdown too.",
-      "details": ["New system install", "Repair + zone diagnosis", "Seasonal start-up", "Winterization", "Drainage solutions"],
+      "slug": "shrub-trimming-removal",
+      "category": "Tree & Shrub",
+      "title": "Shrub Trimming & Removal",
+      "blurb": "Sculpted shrubs and clean hedge lines — or full removals when a bed needs a reset.",
+      "details": ["Shrub shaping", "Hedge trimming", "Shrub removal", "Seasonal cleanup"],
+      "icon": "TreeDeciduous",
+      "image": "/images/portfolio/brick-home-shrubs.jpg"
+    },
+    {
+      "slug": "sprinkler-installation",
+      "category": "Irrigation & Water",
+      "title": "Sprinkler & Irrigation Installation",
+      "blurb": "New sprinkler systems zoned for your actual yard — not the driveway or the sidewalk.",
+      "details": ["New system install", "Zone design", "Smart controllers", "Drip lines"],
       "icon": "Droplets",
       "image": "/images/irrigation.jpg"
     },
     {
-      "slug": "seasonal",
-      "title": "Snow Plowing & Water Features",
-      "blurb": "Same crew, four seasons. Winter snow + ice clearing for driveways and walkways. Spring through fall: water features and decorative installs.",
-      "details": ["Driveway + walkway snow plowing", "Ice melt application", "Water feature design + install", "Outdoor lighting"],
+      "slug": "sprinkler-repair",
+      "category": "Irrigation & Water",
+      "title": "Sprinkler Repair & Maintenance",
+      "blurb": "Repairs, zone diagnosis, seasonal start-up, and winterization for an existing system.",
+      "details": ["Repair + zone diagnosis", "Seasonal start-up", "Winterization", "Leak fixes"],
+      "icon": "Wrench",
+      "image": "/images/irrigation.jpg"
+    },
+    {
+      "slug": "well-systems",
+      "category": "Irrigation & Water",
+      "title": "Well System Work",
+      "blurb": "Well system installation, replacement, and repair, with straight-up diagnostics.",
+      "details": ["Well installation", "Well replacement", "Well repair", "Diagnostics"],
+      "icon": "Droplet",
+      "image": "/images/irrigation.jpg"
+    },
+    {
+      "slug": "water-feature-installation",
+      "category": "Irrigation & Water",
+      "title": "Water Feature Installation",
+      "blurb": "Fountains, ponds, and decorative water features designed and built into the landscape.",
+      "details": ["Design + build", "Pumps + liners", "Stone + edging", "Lighting options"],
+      "icon": "Waves",
+      "image": "/images/outdoor-living.webp"
+    },
+    {
+      "slug": "water-feature-repair",
+      "category": "Irrigation & Water",
+      "title": "Water Feature Repair & Maintenance",
+      "blurb": "Keep an existing fountain or pond clean, sealed, and running through the season.",
+      "details": ["Pump + liner repair", "Leak sealing", "Seasonal service", "Cleaning + tune-up"],
+      "icon": "LifeBuoy",
+      "image": "/images/landscape-lighting.webp"
+    },
+    {
+      "slug": "snow-plowing",
+      "category": "Seasonal",
+      "title": "Snow Plowing & Ice Management",
+      "blurb": "Driveway and walkway plowing plus ice-melt all winter — sign up by October for the route.",
+      "details": ["Driveway plowing", "Walkway clearing", "Ice-melt application", "Seasonal contracts"],
       "icon": "Snowflake",
       "image": "/images/snow-plowing.jpg"
     }
@@ -145,6 +255,18 @@
       "caption": "Sculpted shrubs + paver walkway, brick colonial"
     }
   ],
+  "gallery": [
+    {"src": "/images/projects/kva-firepit-patio.jpg", "category": "Hardscape & Patios", "caption": "Circular paver patio with a natural-stone fire pit", "alt": "Circular paver patio with a stacked natural-stone fire pit and flagstone steps, built by KVA Landscaping"},
+    {"src": "/images/projects/kva-walkway-to-patio.jpg", "category": "Hardscape & Patios", "caption": "Flagstone walkway into a circular patio", "alt": "Finished bluestone flagstone walkway leading to a circular paver patio with seating"},
+    {"src": "/images/projects/kva-flagstone-steps.jpg", "category": "Hardscape & Patios", "caption": "Hand-cut flagstone steps", "alt": "Crew member setting hand-cut flagstone steps beside a circular patio base"},
+    {"src": "/images/projects/kva-flagstone-walkway-install.jpg", "category": "Hardscape & Patios", "caption": "Flagstone walkway going in", "alt": "Dry-laid flagstone walkway under installation on a graded slope with materials staged"},
+    {"src": "/images/projects/kva-flagstone-walkway.jpg", "category": "Hardscape & Patios", "caption": "Dry-laid flagstone path", "alt": "Dry-laid flagstone walkway running across a back lawn"},
+    {"src": "/images/projects/kva-mulch-arborvitae-colonial.jpg", "category": "Mulch & Planting", "caption": "Arborvitae planting + fresh mulch beds", "alt": "Newly planted arborvitae and fresh black mulch beds along a brick colonial with a paver walkway"},
+    {"src": "/images/projects/kva-mulch-sideyard.jpg", "category": "Mulch & Planting", "caption": "Fresh mulch beds + crepe myrtle", "alt": "Fresh mulch beds, a crepe myrtle, and a manicured side-yard lawn"},
+    {"src": "/images/portfolio/brick-home-shrubs.jpg", "category": "Mulch & Planting", "caption": "Sculpted shrubs, brick colonial", "alt": "Sculpted boxwood shrubs and mulched beds along a brick colonial with paver walkway"},
+    {"src": "/images/portfolio/fresh-mow.jpg", "category": "Lawn Care", "caption": "Striped mow, large lawn", "alt": "Freshly mowed striped lawn with mature trees in Sterling, VA"},
+    {"src": "/images/portfolio/lawn-after.jpg", "category": "Lawn Care", "caption": "New sod, Sterling front yard", "alt": "Fresh sod laid in a residential front yard in Sterling, VA"}
+  ],
   "reviews_featured": [
     {
       "source": "Google",
@@ -178,10 +300,30 @@
     },
     {
       "source": "Thumbtack",
-      "author": "Verified Thumbtack customer",
+      "author": "Frances N.",
+      "verified": true,
       "rating": 5,
-      "date": "2024",
-      "text": "They provided superior quality work at a fair price. The crew were diligent workers and the result speaks for itself."
+      "date": "Jul 2025",
+      "service": "Full Service Lawn Care",
+      "text": "The KVA team listened to my lawn needs and worked together to mulch my shrub and flower beds. They provided superior quality work at a fair price. He weeded before mulching and edged the beds to give a manicured look. My husband and I were so pleased — we will definitely use them again."
+    },
+    {
+      "source": "Thumbtack",
+      "author": "Martina A.",
+      "verified": true,
+      "rating": 5,
+      "date": "May 2025",
+      "service": "Mulching",
+      "text": "We didn't have the energy or time to tackle our flower beds. I reached out to KVA Landscaping and they responded right away. My yard looks great. I'm planning to get my backyard done soon. Thanks KVA Landscaping!"
+    },
+    {
+      "source": "Thumbtack",
+      "author": "Brian J.",
+      "verified": true,
+      "rating": 5,
+      "date": "Jul 2025",
+      "service": "Weeding",
+      "text": "This team is awesome. They were wide eyed at how bad our weeds had gotten, but handled it really well and now our yard is completely clear and looks great. I'll be going back to them for future work."
     },
     {
       "source": "Google",
@@ -201,13 +343,13 @@
   },
   "about": {
     "headline": "One Sterling crew. Nine years. Every yard treated like a neighbor's.",
-    "body": "KVA Landscaping is a family-run crew out of Sterling, VA. We have been doing landscape work in Loudoun and Fairfax for nine years — the same crew, the same number, the same standards. From weekly mowing and seasonal mulch to full hardscape builds, we cover the whole yard with one team that already knows your property. Most of our work is for homeowners within ten miles of Sterling — Herndon, Leesburg, Ashburn, Reston — plus a handful of property managers we have been with for years. We show up when we said we would, we do good work, and we come back when you call.",
+    "body": "KVA Landscaping is a family-run crew out of Sterling, VA. We have been doing landscape work in Loudoun and Fairfax for nine years — the same crew, the same number, the same standards. From weekly mowing and seasonal mulch to full hardscape builds, we cover the whole yard with one team that already knows your property. Most of our work is for homeowners within ten miles of Sterling — Herndon, Leesburg, Ashburn, Reston — plus a handful of property managers we have been with for years. We show up when we said we would, we do good work, and we come back when you call. KVA is led by owner Victor Amaya — a Virginia Class A licensed contractor — and every crew member is background-checked.",
     "body_extra": "Nine seasons in NoVA teach you things you can't shortcut. We know which sub-developments sit on heavy Loudoun clay (and how to amend beds so plantings actually take), which HOAs require pre-approval for paver work and how to get it through fast, and which freeze-thaw windows to schedule hardscape around so a patio still sits level five winters later. None of that ends up on a project bid — it just shows up in the way your yard holds up.",
     "credentials_callout": [
-      "165+ Five-Star Reviews",
+      "165+ Reviews · 4.7★ Average",
+      "Class A VA Contractor · Background-Checked",
       "Thumbtack Top Pro 2023 + 2025",
-      "9 Years Serving NoVA",
-      "Family-Run · Local Crew"
+      "9 Years Serving NoVA · Family-Run"
     ]
   },
   "faqs": [
@@ -237,7 +379,15 @@
     },
     {
       "q": "Are you licensed and insured?",
-      "a": "Yes, fully licensed in Virginia and insured. Happy to share certificates of insurance for HOA-managed properties or property managers who need them on file."
+      "a": "Yes — KVA is led by owner Victor Amaya, a Virginia Class A licensed contractor, and the company is fully insured. Every crew member is background-checked. Happy to share certificates of insurance for HOA-managed properties or property managers who need them on file."
+    },
+    {
+      "q": "What's your process with a new customer?",
+      "a": "You reach out, we get a quick idea of what you need, and we either give you a ballpark or — for anything real — come walk the property and give you a free, accurate estimate. No call center; you talk to the crew."
+    },
+    {
+      "q": "What's a recent project you're proud of?",
+      "a": "We just wrapped a big build in Germantown, MD — a flagstone sidewalk, stairs, a paver patio, and a natural-stone fire pit, tying together flagstone, pavers, rock, and concrete. A few of those shots are in our gallery."
     }
   ],
   "estimate_form": {

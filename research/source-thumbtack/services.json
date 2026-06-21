@@ -1,0 +1,653 @@
+{
+  "source": {
+    "platform": "Thumbtack",
+    "url": "https://www.thumbtack.com/va/sterling/lawn-care/kva-landscaping-llc/service/383279837090897930",
+    "scrapedAt": "2026-06-20",
+    "servicePK": "383279837090897930"
+  },
+  "business": {
+    "name": "KVA Landscaping LLC",
+    "owner": "Victor Amaya (Victor H. Amaya Quintanilla)",
+    "parentCompany": "JVA Home Care LLC (sibling brands: JVA House Cleaner LLC, KVA Landscaping LLC)",
+    "location": "Sterling, VA 20164",
+    "rating": 4.63,
+    "reviewCount": 158,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "percent": "86%"
+      },
+      {
+        "stars": 4,
+        "percent": "5%"
+      },
+      {
+        "stars": 3,
+        "percent": "1%"
+      },
+      {
+        "stars": 2,
+        "percent": "3%"
+      },
+      {
+        "stars": 1,
+        "percent": "5%"
+      }
+    ],
+    "reviewKeywords": [
+      "landscaping",
+      "yard",
+      "weed",
+      "service",
+      "lawn",
+      "trimming",
+      "backyard",
+      "bushes",
+      "leaves",
+      "care"
+    ],
+    "hiredCount": 206,
+    "employees": 10,
+    "yearsInBusiness": 9,
+    "backgroundChecked": true,
+    "license": "Class A contractor, licensed under Virginia law",
+    "topProYears": [
+      "2025",
+      "2023"
+    ],
+    "paymentMethods": [
+      "Apple Pay",
+      "Cash",
+      "Check",
+      "Credit card",
+      "PayPal",
+      "Venmo",
+      "Zelle"
+    ],
+    "businessHours": "Not listed on Thumbtack",
+    "serviceRadius": {
+      "additionRenovation": "15 miles around Sterling VA",
+      "landscaping": "10 miles",
+      "cleaning": "30 miles"
+    },
+    "serviceAreasMentioned": [
+      "Herndon",
+      "Sterling",
+      "Leesburg"
+    ],
+    "about": "JVA Home Care is an insured company licensed under Virginia law as a Class A contractor.\n\nJVA Home Care LLC, JVA House Cleaner LLC, and kVA Landscaping LLC are managed by Victor Amaya. He is a contractor class A licensed in Virginia, he identified himself as an entrepreneur providing work to the Herndon, Sterling, and Leesburg VA Communities.\n\nEverything started as a dream now we are available to provide addition and renovation services for 15 miles around Sterling VA, Landscaping services for 10 miles, and cleaning services for 30 miles.\n\nVictor Amaya is responsible to make sure every department is running professionally and efficiently."
+  },
+  "servicesOffered": [
+    {
+      "name": "Lawn Mowing and Trimming",
+      "categoryPK": "122766917521637728",
+      "url": "https://www.thumbtack.com/va/sterling/lawn-care/kva-landscaping-llc/service/383279837090897930?category_pk=122766917521637728",
+      "intakeQuestions": [
+        {
+          "label": "Frequency",
+          "type": "RADIO",
+          "options": [
+            "Just once",
+            "Once a week",
+            "Every 2 weeks",
+            "Once a month"
+          ]
+        },
+        {
+          "label": "Clippings",
+          "type": "RADIO",
+          "options": [
+            "Mulch",
+            "Bag and haul"
+          ]
+        },
+        {
+          "label": "Lawn size",
+          "type": "RADIO",
+          "options": [
+            "Less than 1,000 sq ft (<0.02 acres)",
+            "1,000 - 5,000 sq ft (0.02-0.11 acres)",
+            "5,000 - 10,000 sq ft (0.11-0.23 acres)",
+            "10,000 - 15,000 sq ft (0.23-0.34 acres)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Well System Work",
+      "categoryPK": "152059271518609759",
+      "url": "https://www.thumbtack.com/va/sterling/lawn-care/kva-landscaping-llc/service/383279837090897930?category_pk=152059271518609759",
+      "intakeQuestions": [
+        {
+          "label": "Work type",
+          "type": "RADIO",
+          "options": [
+            "Well installation",
+            "Well replacement",
+            "Well repair",
+            "I'm not sure"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sprinkler and Irrigation System Repair and Maintenance",
+      "categoryPK": "195374450693054969",
+      "url": "https://www.thumbtack.com/va/sterling/lawn-care/kva-landscaping-llc/service/383279837090897930?category_pk=195374450693054969",
+      "intakeQuestions": [
+        {
+          "label": "Property type",
+          "type": "RADIO",
+          "options": [
+            "Residential",
+            "Commercial"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mulching",
+      "categoryPK": "240126000521191733",
+      "url": "https://www.thumbtack.com/va/sterling/lawn-care/kva-landscaping-llc/service/383279837090897930?category_pk=240126000521191733",
+      "intakeQuestions": [
+        {
+          "label": "Area size",
+          "type": "RADIO",
+          "options": [
+            "Small (less than 500 sq ft)",
+            "Medium (500-1000 sq ft)",
+            "Large (1000-2500 sq ft)",
+            "Other"
+          ]
+        },
+        {
+          "label": "Mulch provided",
+          "type": "RADIO",
+          "options": [
+            "Yes, I will provide the mulch",
+            "No, I will need the professional to provide the mulch",
+            "I'm flexible"
+          ]
+        },
+        {
+          "label": "Previous mulch application",
+          "type": "RADIO",
+          "options": [
+            "I've never applied mulch to this area",
+            "I applied mulch this area last year",
+            "I applied mulch to this area over a year ago",
+            "Other",
+            "I'm not sure"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Weeding",
+      "categoryPK": "240127023184798007",
+      "url": "https://www.thumbtack.com/va/sterling/lawn-care/kva-landscaping-llc/service/383279837090897930?category_pk=240127023184798007",
+      "intakeQuestions": [
+        {
+          "label": "Frequency",
+          "type": "RADIO",
+          "options": [
+            "Only one time",
+            "Once a week",
+            "Every other week",
+            "Once a month",
+            "I'm flexible"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Patio Remodel or Addition",
+      "categoryPK": "242224544494477771",
+      "url": "https://www.thumbtack.com/va/sterling/lawn-care/kva-landscaping-llc/service/383279837090897930?category_pk=242224544494477771",
+      "intakeQuestions": [
+        {
+          "label": "Patio attached?",
+          "type": "RADIO",
+          "options": [
+            "Yes, the patio will be structurally connected to buildings",
+            "No, the patio will not be structurally connected to buildings",
+            "I'm not sure if the patio will be structurally connected to buildings"
+          ]
+        },
+        {
+          "label": "Electrical or plumbing requirements for patio",
+          "type": "RADIO",
+          "options": [
+            "Yes",
+            "No",
+            "I'm not sure"
+          ]
+        },
+        {
+          "label": "Structural patio elements",
+          "type": "RADIO",
+          "options": [
+            "Yes",
+            "No",
+            "I'm not sure"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tree Planting",
+      "categoryPK": "195372380267143671",
+      "url": "https://www.thumbtack.com/va/sterling/lawn-care/kva-landscaping-llc/service/383279837090897930?category_pk=195372380267143671",
+      "intakeQuestions": [
+        {
+          "label": "After project services",
+          "type": "RADIO",
+          "options": [
+            "This is a one-time project",
+            "I would like regular maintenance",
+            "I'm flexible"
+          ]
+        },
+        {
+          "label": "Trees provided",
+          "type": "RADIO",
+          "options": [
+            "Yes, I will purchase and provide the trees",
+            "Yes, but I will need help from the lawn care professional",
+            "No, I need the lawn care professional to purchase the trees",
+            "I'm flexible"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gardening",
+      "categoryPK": "124319547394474414",
+      "url": "https://www.thumbtack.com/va/sterling/lawn-care/kva-landscaping-llc/service/383279837090897930?category_pk=124319547394474414",
+      "intakeQuestions": [
+        {
+          "label": "Square footage of garden",
+          "type": "RADIO",
+          "options": [
+            "Extra small (less than 1,000 sq ft)",
+            "Small (1,000 - 2,500 sq ft)",
+            "Medium (2,500 - 5,000 sq ft)",
+            "Large (5,000 - 10,000 sq ft)",
+            "Very large (more than 10,000 sq ft)",
+            "I'm not sure of square footage"
+          ]
+        },
+        {
+          "label": "Regular garden maintenance needed?",
+          "type": "RADIO",
+          "options": [
+            "No, this is a one-time project",
+            "Once a week",
+            "Every other week",
+            "2 - 3 times a month",
+            "As needed",
+            "I'm flexible"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sprinkler and Irrigation System Installation",
+      "categoryPK": "136056997940732341",
+      "url": "https://www.thumbtack.com/va/sterling/lawn-care/kva-landscaping-llc/service/383279837090897930?category_pk=136056997940732341",
+      "intakeQuestions": [
+        {
+          "label": "Project scope",
+          "type": "RADIO",
+          "options": [
+            "I want to install a new system in a bare yard",
+            "I want to install a new system in an existing yard",
+            "I want to update or add to an existing system"
+          ]
+        },
+        {
+          "label": "Coverage square footage",
+          "type": "RADIO",
+          "options": [
+            "Less than 500 sq. ft.",
+            "500-1000 sq. ft.",
+            "1000-1500 sq. ft.",
+            "1500-2000 sq. ft.",
+            "2000-2500 sq. ft.",
+            "2500-3000 sq. ft.",
+            "Greater than 3000 sq. ft.",
+            "I'm not sure of the square footage"
+          ]
+        },
+        {
+          "label": "System type",
+          "type": "RADIO",
+          "options": [
+            "Manual system",
+            "Timer-driven automatic system",
+            "System recommended by professional"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Water Feature Installation",
+      "categoryPK": "167191206369460676",
+      "url": "https://www.thumbtack.com/va/sterling/lawn-care/kva-landscaping-llc/service/383279837090897930?category_pk=167191206369460676",
+      "intakeQuestions": [
+        {
+          "label": "Project scope",
+          "type": "RADIO",
+          "options": [
+            "I want to install a new water feature",
+            "I want to completely replace an existing water feature",
+            "I want to update an existing water feature",
+            "Other water feature needs"
+          ]
+        },
+        {
+          "label": "Water feature plans",
+          "type": "RADIO",
+          "options": [
+            "Yes, I have existing water feature plans",
+            "No existing plans, but have a good idea of what I want",
+            "No existing plans and need professional advice",
+            "Other"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tree Trimming and Removal",
+      "categoryPK": "240142059022278971",
+      "url": "https://www.thumbtack.com/va/sterling/lawn-care/kva-landscaping-llc/service/383279837090897930?category_pk=240142059022278971",
+      "intakeQuestions": [
+        {
+          "label": "Service",
+          "type": "RADIO",
+          "options": [
+            "Trim trees",
+            "Cut down trees and remove stumps",
+            "Cut down trees",
+            "Something else"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shrub Trimming and Removal",
+      "categoryPK": "240143549015245118",
+      "url": "https://www.thumbtack.com/va/sterling/lawn-care/kva-landscaping-llc/service/383279837090897930?category_pk=240143549015245118",
+      "intakeQuestions": [
+        {
+          "label": "Number of shrubs",
+          "type": "RADIO",
+          "options": [
+            "1-5 shrubs",
+            "6-10 shrubs",
+            "11-20 shrubs",
+            "21-50 shrubs",
+            "51-100 shrubs"
+          ]
+        },
+        {
+          "label": "Property type",
+          "type": "RADIO",
+          "options": [
+            "Residential",
+            "Commercial"
+          ]
+        },
+        {
+          "label": "Shrub height",
+          "type": "RADIO",
+          "options": [
+            "Less than 4 feet tall",
+            "5-7 feet tall",
+            "Greater than 8 feet tall",
+            "I'm not sure"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Outdoor Landscaping and Design",
+      "categoryPK": "124319844707721647",
+      "url": "https://www.thumbtack.com/va/sterling/lawn-care/kva-landscaping-llc/service/383279837090897930?category_pk=124319844707721647",
+      "intakeQuestions": [
+        {
+          "label": "Maintenance",
+          "type": "RADIO",
+          "options": [
+            "No, one-time project",
+            "Yes, maintenance needed",
+            "I'm flexible"
+          ]
+        },
+        {
+          "label": "Work needed",
+          "type": "RADIO",
+          "options": [
+            "Small changes like planting flowers or trimming shrubs",
+            "Larger projects like planting trees or installing sprinkler",
+            "Complete renovation like replacing soil or hardscape services"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Water Feature Repair and Maintenance",
+      "categoryPK": "167191246425072069",
+      "url": "https://www.thumbtack.com/va/sterling/lawn-care/kva-landscaping-llc/service/383279837090897930?category_pk=167191246425072069",
+      "intakeQuestions": []
+    },
+    {
+      "name": "Full Service Lawn Care",
+      "categoryPK": "240123621172183344",
+      "url": "https://www.thumbtack.com/va/sterling/lawn-care/kva-landscaping-llc/service/383279837090897930?category_pk=240123621172183344",
+      "intakeQuestions": [
+        {
+          "label": "Frequency of services",
+          "type": "RADIO",
+          "options": [
+            "One time only",
+            "Once a week",
+            "Every other week",
+            "Once a month"
+          ]
+        },
+        {
+          "label": "Estimated lawn size",
+          "type": "RADIO",
+          "options": [
+            "Less than 1,000 sq ft (<0.02 acres)",
+            "1,000 - 5,000 sq ft (0.02-0.11 acres)",
+            "5,000 - 10,000 sq ft (0.11-0.23 acres)",
+            "10,000 - 15,000 sq ft (0.23-0.34 acres)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Snow Plowing",
+      "categoryPK": "248046574763368751",
+      "url": "https://www.thumbtack.com/va/sterling/lawn-care/kva-landscaping-llc/service/383279837090897930?category_pk=248046574763368751",
+      "intakeQuestions": [
+        {
+          "label": "Size of area",
+          "type": "RADIO",
+          "options": [
+            "Less than 500 sq ft (~2 car driveway)",
+            "500 - 1,000 sq ft",
+            "1,000 - 1,500 sq ft",
+            "1,500 - 2,000 sq ft",
+            "2,000 - 3,000 sq ft",
+            "3,000 - 4,000 sq ft",
+            "4,000 - 5,000 sqft",
+            "I'm not sure"
+          ]
+        },
+        {
+          "label": "Neighborhood needs",
+          "type": "RADIO",
+          "options": [
+            "My neighbors need snow plowing as well",
+            "I just need snow plowing for my residence",
+            "I'm not sure if my neighbors also need snow plowing"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sod Installation",
+      "categoryPK": "124324236659917232",
+      "url": "https://www.thumbtack.com/va/sterling/lawn-care/kva-landscaping-llc/service/383279837090897930?category_pk=124324236659917232",
+      "intakeQuestions": [
+        {
+          "label": "Estimated lawn size",
+          "type": "RADIO",
+          "options": [
+            "Small (less than 1,000 sq ft)",
+            "Medium (1,000 - 5,000 sq ft)",
+            "Large (5,000 - 10,000 sq ft)",
+            "Very large (10,000-15,000 sq ft)"
+          ]
+        },
+        {
+          "label": "Project scope",
+          "type": "RADIO",
+          "options": [
+            "Installed onto existing lawn",
+            "Installed onto bare soil",
+            "I'm not sure"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What should the customer know about your pricing (e.g., discounts, fees)?",
+      "answer": "We charge per square feet"
+    },
+    {
+      "question": "What is your typical process for working with a new customer?",
+      "answer": "Customer will contact me and if I’m available to get a Idea what they need we can set up a price or go to the customer home to give a free estimate"
+    },
+    {
+      "question": "What education and/or training do you have that relates to your work?",
+      "answer": "6+ years of experience"
+    },
+    {
+      "question": "How did you get started doing this type of work?",
+      "answer": "I started working for another landscaping company in sterling VA"
+    },
+    {
+      "question": "What types of customers have you worked with?",
+      "answer": "Every week, every two weeks, one time only"
+    },
+    {
+      "question": "Describe a recent project you are fond of. How long did it take?",
+      "answer": "We just finished a big project in Germantown MD was a sidewalk, stairs, patio and fire pit\nFlagstones, paver, rocks and concrete"
+    },
+    {
+      "question": "What advice would you give a customer looking to hire a provider in your area of work?",
+      "answer": "Reviews will tell the truth about a business"
+    },
+    {
+      "question": "What questions should customers think through before talking to professionals about their project?",
+      "answer": "How soon they will need the service done and what the customer is expecting from us"
+    }
+  ],
+  "reviews": [
+    {
+      "author": "Brian J.",
+      "rating": 5,
+      "date": "Jul 29, 2025",
+      "verified": "Hired on Thumbtack",
+      "service": "Weeding",
+      "text": "This team is awesome. They were wide eyed at how bad our weeds had gotten, but handled it really well and now our yard is completely clear and looks great. I’ll be going back to them for future work.",
+      "details": "Details: Residential • Medium (1,000 - 5,000 sq ft) • Over a month ago • No, I prefer no herbicides to be used • No, I don't need to be there • Only one time"
+    },
+    {
+      "author": "Frances N.",
+      "rating": 5,
+      "date": "Jul 30, 2025",
+      "verified": "Hired on Thumbtack",
+      "service": "Full Service Lawn Care",
+      "text": "The KVA team listened to my lawn needs and worked together to mulch my shrub and flower beds.  They provided superior quality work at a fair price.  I have not had such diligent workers who took the same care and pride with my yard as we did when we were able. \n\nAfter planting my skip laurel shrubs one of the team members watered the shrubs.  I was so thankful. He weeded before mulching and edged the beds to give a manicured look. \n\nMy husband and I were so pleased to find this team.  We will definitely use them again.",
+      "details": "Details: Once a week • Residential • 5,000 - 10,000 sq ft (0.11-0.23 acres) • Mowing, trimming, and edging • Standard grass (under 6 inches) • Yes, I must be present"
+    },
+    {
+      "author": "Annette G.",
+      "rating": 5,
+      "date": "Jun 21, 2025",
+      "verified": "Hired on Thumbtack",
+      "service": "Full Service Lawn Care",
+      "text": "They responded quickly to my inquiry and were responsive to my questions. They kept me posted on the scheduling and did a very nice job. I hired them for ongoing lawn mowing.",
+      "details": "Details: Once a month • Residential • Less than 1,000 sq ft (<0.02 acres) • Mowing, trimming, and edging • Weeding and prevention • Standard grass (under 6 inches) • No, I don't need to be there"
+    },
+    {
+      "author": "Wendy W.",
+      "rating": 5,
+      "date": "Jul 13, 2025",
+      "verified": "Hired on Thumbtack",
+      "service": "Weeding",
+      "text": "I’m so glad that we chose KVA for our weeding and bush trimming. They did an excellent job with the completion of our yard. They were very responsive We will be calling this company again.",
+      "details": "Details: Residential • Medium (1,000 - 5,000 sq ft) • 3-4 weeks ago • No, I prefer no herbicides to be used • No, I don't need to be there • Only one time"
+    },
+    {
+      "author": "Martina A.",
+      "rating": 5,
+      "date": "May 24, 2025",
+      "verified": "Hired on Thumbtack",
+      "service": "Mulching",
+      "text": "We didn’t have the energy or time to tackle our flower beds. I reached out to KVA Landscaping and they responded right away. My yard looks great. I’m planning to get my backyard done soon. Thanks KVA Landscaping 😀",
+      "details": "Details: Residential • Yes, I will provide the mulch • Medium (500-1000 sq ft) • No, I will need the professional to prep the area for me • I applied mulch to this area over a year ago"
+    }
+  ],
+  "photos": [
+    {
+      "file": "images/gallery-02.jpg",
+      "pk": "428296487852400668",
+      "category": "hardscaping",
+      "caption": "Flagstone walkway mid-installation — dry-laid bluestone on a graded slope, materials staged"
+    },
+    {
+      "file": "images/gallery-03.jpg",
+      "pk": "428296488966840322",
+      "category": "hardscaping",
+      "caption": "Dry-laid flagstone walkway running across a back lawn"
+    },
+    {
+      "file": "images/gallery-04.jpg",
+      "pk": "428296489963798529",
+      "category": "hardscaping",
+      "caption": "Circular paver patio with a natural-stone fire pit and flagstone steps (Germantown MD project)"
+    },
+    {
+      "file": "images/gallery-05.jpg",
+      "pk": "428296490324090908",
+      "category": "hardscaping",
+      "caption": "Crew cutting flagstone treads for steps; circular patio base behind, split-rail fence"
+    },
+    {
+      "file": "images/gallery-06.jpg",
+      "pk": "428296490328743937",
+      "category": "hardscaping",
+      "caption": "Near-finished flagstone walkway leading to a circular patio with Adirondack chairs"
+    },
+    {
+      "file": "images/review-mulching-01.jpg",
+      "pk": "548964696636858371",
+      "category": "mulching_planting",
+      "caption": "Brick colonial front — arborvitae plantings, fresh black mulch beds, paver walkway (review: Martina A.)"
+    },
+    {
+      "file": "images/review-mulching-02.jpg",
+      "pk": "548964696859361291",
+      "category": "mulching_planting",
+      "caption": "Side yard — fresh mulch beds, crepe myrtle, manicured lawn (review: Martina A.)"
+    }
+  ]
+}

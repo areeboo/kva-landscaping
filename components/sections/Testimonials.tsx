@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
+import { BadgeCheck, ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { content } from "@/lib/content";
 
 export function Testimonials() {
@@ -17,7 +17,7 @@ export function Testimonials() {
   }
 
   return (
-    <section id="reviews" className="scroll-mt-24 border-y border-kva-stone-light bg-kva-cream py-20 sm:py-24">
+    <section id="reviews" className="scroll-mt-24 border-y border-kva-stone-light bg-kva-cream py-12 sm:py-16">
       <div className="kva-container">
         <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-end">
           <div>
@@ -84,8 +84,20 @@ export function Testimonials() {
               </blockquote>
               <figcaption className="mt-5 border-t border-kva-stone-light pt-4 text-sm">
                 <span className="block font-semibold text-kva-ink">{review.author}</span>
-                <span className="mt-0.5 block text-xs text-kva-stone">
-                  {review.source} · {review.date}
+                <span className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-kva-stone">
+                  <span>
+                    {review.source} · {review.date}
+                  </span>
+                  {"verified" in review && review.verified && (
+                    <span className="inline-flex items-center gap-1 rounded-full bg-kva-forest/10 px-2 py-0.5 font-semibold text-kva-forest">
+                      <BadgeCheck className="h-3 w-3" aria-hidden /> Verified
+                    </span>
+                  )}
+                  {"service" in review && review.service && (
+                    <span className="rounded-full bg-kva-green/15 px-2 py-0.5 font-medium text-kva-green-deep">
+                      {review.service}
+                    </span>
+                  )}
                 </span>
               </figcaption>
             </li>

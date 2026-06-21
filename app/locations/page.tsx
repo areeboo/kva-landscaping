@@ -49,7 +49,7 @@ export default function LocationsIndexPage() {
         chips={["Sterling-based crew", "Family-run", "Top Pro 2025", "165+ reviews"]}
       />
       <TrustStrip />
-      <section id="locations" className="bg-paper py-20 sm:py-24">
+      <section id="locations" className="bg-paper py-12 sm:py-16">
         <div className="kva-container">
           <SectionHeader
             eyebrow="Cities served"
@@ -61,7 +61,7 @@ export default function LocationsIndexPage() {
           </div>
         </div>
       </section>
-      <section className="bg-kva-cream py-20 sm:py-24">
+      <section className="bg-kva-cream py-12 sm:py-16">
         <div className="kva-container">
           <SectionHeader
             eyebrow="Services"

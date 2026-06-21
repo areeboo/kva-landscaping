@@ -73,8 +73,8 @@ type ServiceCopy = {
 };
 
 export const serviceCopy: Record<string, ServiceCopy> = {
-  "lawn-care": {
-    h1: "Lawn Care & Maintenance in Sterling and Loudoun, VA",
+  "full-service-lawn-care": {
+    h1: "Full-Service Lawn Care in Sterling and Loudoun, VA",
     intro: [
       "Good lawn care in Sterling is steady work, not a quick pass with a mower. KVA handles weekly and bi-weekly mowing, edging, trimming, weed control, aeration, overseeding, and seasonal cleanups for homes around Sterling, Herndon, Ashburn, Reston, Leesburg, and Great Falls. The goal is simple: clean lines, healthy turf, and a yard that looks cared for when neighbors walk past.",
       "Nine NoVA seasons have taught the crew how fast clay soil compacts, how quickly a hot July can stress cool-season turf, and how much difference clean edging makes around sidewalks, beds, and driveways. KVA is family-run, local to Sterling, a Thumbtack Top Pro for 2025, and backed by 165+ reviews with a fast response time when you need a walk-through.",
@@ -98,8 +98,8 @@ export const serviceCopy: Record<string, ServiceCopy> = {
       "Aeration + overseeding": "Aeration and overseeding help compacted NoVA clay breathe and give thin lawns a better shot at filling in.",
     },
   },
-  "mulch-beds-planting": {
-    h1: "Mulch, Beds & Planting in Sterling and Loudoun, VA",
+  "mulching": {
+    h1: "Mulching in Sterling and Loudoun, VA",
     intro: [
       "Mulch and bed work is where a property starts to look intentional. KVA reshapes beds, cuts clean edges, pulls weeds, installs mulch, lays sod, and helps choose plantings that make sense for Sterling and the wider Loudoun and Fairfax service area. The work is practical: fresh lines, healthy soil, and plants that still look right after a NoVA summer.",
       "The crew works across Sterling, Herndon, Leesburg, Ashburn, Reston, and Great Falls, with a lot of spring and fall bed cleanups for HOA-managed neighborhoods and busy homeowners who need the front yard brought back under control. KVA is family-run, nine years local, a Top Pro 2025 company, and known in reviews for mulch, trimming, cleanup, and good communication.",
@@ -123,8 +123,8 @@ export const serviceCopy: Record<string, ServiceCopy> = {
       "Weed removal + cleanup": "Weed removal and cleanup reset crowded beds before mulch covers the soil and locks in the finished look.",
     },
   },
-  "hardscape-patios": {
-    h1: "Hardscape & Patios in Sterling and Loudoun, VA",
+  "paver-patios": {
+    h1: "Paver Patios & Remodels in Sterling and Loudoun, VA",
     intro: [
       "A paver patio or walkway has to survive more than the first weekend after installation. In Sterling and Loudoun, it has to handle clay soil, drainage, freeze-thaw cycles, tree roots, foot traffic, and the occasional HOA review. KVA builds and re-levels patios, walkways, steps, retaining walls, and stone borders for homeowners who want the work done carefully the first time.",
       "This is one of the clearest proof points in KVA reviews: customers call out a backyard paver patio, attached walkways, and existing patios brought back to clean and level. The crew is family-run, nine years local, Top Pro 2025, and based in Sterling, with hardscape work across Herndon, Leesburg, Ashburn, Reston, and Great Falls.",
@@ -148,8 +148,8 @@ export const serviceCopy: Record<string, ServiceCopy> = {
       "Stone borders": "Stone borders define beds, lawns, and hardscape edges while making maintenance easier for the seasons ahead.",
     },
   },
-  "tree-shrub": {
-    h1: "Tree & Shrub Care in Sterling and Loudoun, VA",
+  "tree-trimming-removal": {
+    h1: "Tree Trimming & Removal in Sterling and Loudoun, VA",
     intro: [
       "Tree and shrub work changes the whole shape of a yard. KVA handles pruning, shaping, shrub installation, storm cleanup, tree removal, and stump removal for Sterling-area homes that need clean lines without hacked-up plants. The work is especially useful around brick colonials, HOA-managed front yards, shaded Reston lots, and older Sterling properties with mature trees.",
       "The crew is family-run, nine years local, and used to the way NoVA landscapes grow: boxwoods that need shaping, overgrown foundation shrubs, storm debris after summer weather, and beds where new shrubs need enough room to settle in. KVA brings the same practical standard here as it does to patios, mulch, mowing, and irrigation.",
@@ -173,8 +173,8 @@ export const serviceCopy: Record<string, ServiceCopy> = {
       "Stump removal": "Stump removal opens up usable bed or lawn space and helps prevent an old removal from becoming a permanent obstacle.",
     },
   },
-  irrigation: {
-    h1: "Irrigation Systems in Sterling and Loudoun, VA",
+  "sprinkler-installation": {
+    h1: "Sprinkler & Irrigation Installation in Sterling and Loudoun, VA",
     intro: [
       "Irrigation should water the lawn and beds, not the driveway, sidewalk, or side of the house. KVA installs new sprinkler systems, repairs existing zones, handles seasonal start-up and winterization, and diagnoses drainage problems for Sterling-area homeowners who want fewer dry patches and fewer surprise leaks.",
       "The crew works across Sterling, Herndon, Leesburg, Ashburn, Reston, and Great Falls, with a lot of irrigation needs tied to newer Ashburn builds, sod installs, and yards where clay soil holds water in one area but dries out hard in another. KVA is family-run, nine years local, a Top Pro 2025 company, and known for practical communication before and during the job.",
@@ -198,8 +198,8 @@ export const serviceCopy: Record<string, ServiceCopy> = {
       "Drainage solutions": "Drainage solutions address wet spots, runoff, and water movement that can undermine lawns, beds, and patios.",
     },
   },
-  seasonal: {
-    h1: "Seasonal Landscaping, Snow Plowing & Water Features in Sterling, VA",
+  "snow-plowing": {
+    h1: "Snow Plowing & Ice Management in Sterling and Loudoun, VA",
     intro: [
       "KVA stays useful after mowing season ends. The same Sterling crew handles seasonal cleanup, residential snow plowing, walkway clearing, ice melt, water features, and outdoor lighting for homeowners who want one reliable number for the yard through the year. The work is practical, local, and built around the way NoVA weather changes from spring growth to winter ice.",
       "Seasonal service matters in Sterling, Herndon, Leesburg, Ashburn, Reston, and Great Falls because yards here deal with leaf drop, clay soil, hard freezes, HOA expectations, and driveways that need clearing before the morning commute. KVA is family-run, nine years local, Top Pro 2025, and backed by 165+ reviews across year-round landscape work.",
@@ -324,12 +324,23 @@ function reviewYear(date: string) {
 function scoreReview(serviceSlug: string, text: string) {
   const lower = text.toLowerCase();
   const keywords: Record<string, string[]> = {
-    "lawn-care": ["sod", "grass", "seed", "lawn", "front and back"],
-    "mulch-beds-planting": ["mulch", "plant", "garden", "weed", "landscaping"],
-    "hardscape-patios": ["paver", "patio", "walkway", "level", "hardscape"],
-    "tree-shrub": ["trim", "plant trimming", "shrub", "tree", "landscaping"],
-    irrigation: ["communication", "quality", "suggestions", "landscaping"],
-    seasonal: ["quality", "diligent", "communication", "several places", "fair price"],
+    "lawn-mowing": ["lawn", "mow", "grass", "front and back"],
+    "full-service-lawn-care": ["lawn", "mow", "grass", "seed", "front and back"],
+    "mulching": ["mulch", "bed", "shrub", "flower bed"],
+    "weeding": ["weed", "bed"],
+    "gardening": ["garden", "plant", "flower", "design"],
+    "tree-shrub-planting": ["plant", "shrub", "tree"],
+    "sod-installation": ["sod", "grass", "seed"],
+    "paver-patios": ["paver", "patio", "level", "hardscape"],
+    "landscape-design": ["landscaping", "walkway", "design", "patio"],
+    "tree-trimming-removal": ["tree", "trim", "removal"],
+    "shrub-trimming-removal": ["shrub", "trim", "bush"],
+    "sprinkler-installation": ["irrigation", "sprinkler", "water"],
+    "sprinkler-repair": ["irrigation", "sprinkler", "repair"],
+    "well-systems": ["well", "water"],
+    "water-feature-installation": ["water feature", "fountain", "pond"],
+    "water-feature-repair": ["water feature", "fountain", "pond"],
+    "snow-plowing": ["snow", "plow", "ice", "quality", "fair price"],
   };
   return (keywords[serviceSlug] ?? []).reduce(
     (score, keyword) => score + (lower.includes(keyword) ? 2 : 0),

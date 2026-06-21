@@ -9,7 +9,7 @@ const credentialIcons = [Award, Calendar, MapPin, Users];
 
 export function About() {
   return (
-    <section id="about" className="relative scroll-mt-24 bg-paper py-24 sm:py-28 lg:py-32">
+    <section id="about" className="relative scroll-mt-24 bg-paper py-16 sm:py-28 lg:py-32">
       <div className="kva-container">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="relative lg:col-span-5">

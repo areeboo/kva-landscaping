@@ -11,15 +11,15 @@ const reasons = [
 ];
 
 const tiles = [
-  { src: "/images/projects/project-patio.webp", label: "Patios", href: "/services/hardscape-patios", alt: "Covered paver patio and entertaining area" },
-  { src: "/images/projects/project-landscape.webp", label: "Landscapes", href: "/services/mulch-beds-planting", alt: "Complete landscape installation on a NoVA property" },
-  { src: "/images/projects/project-firepit.webp", label: "Outdoor living", href: "/services/hardscape-patios", alt: "Stone fire pit with outdoor seating" },
-  { src: "/images/projects/project-beds.webp", label: "Garden beds", href: "/services/mulch-beds-planting", alt: "Freshly mulched and maintained plant beds" },
+  { src: "/images/projects/kva-firepit-patio.jpg", label: "Fire pit patios", href: "/services/paver-patios", alt: "Circular paver patio with a natural-stone fire pit, built by KVA in NoVA" },
+  { src: "/images/projects/kva-flagstone-walkway.jpg", label: "Flagstone walkways", href: "/services/landscape-design", alt: "Dry-laid flagstone walkway across a back lawn by KVA Landscaping" },
+  { src: "/images/projects/kva-mulch-arborvitae-colonial.jpg", label: "Mulch & planting", href: "/services/mulching", alt: "Arborvitae planting and fresh mulch beds along a brick colonial" },
+  { src: "/images/portfolio/fresh-mow.jpg", label: "Lawn care", href: "/services/lawn-mowing", alt: "Freshly mowed striped lawn with mature trees in Sterling, VA" },
 ];
 
 export function WhyProjects() {
   return (
-    <section id="projects" className="scroll-mt-24 bg-kva-cream-warm py-20 sm:py-24">
+    <section id="projects" className="scroll-mt-24 bg-kva-cream-warm py-12 sm:py-16">
       <div className="kva-container grid gap-12 lg:grid-cols-12 lg:gap-14">
         {/* Why KVA */}
         <div className="lg:col-span-4">

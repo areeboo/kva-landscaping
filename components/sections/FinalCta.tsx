@@ -23,7 +23,7 @@ export function FinalCta() {
             "linear-gradient(90deg, color-mix(in oklab, var(--kva-forest-deep) 92%, transparent), color-mix(in oklab, var(--kva-forest) 70%, transparent))",
         }}
       />
-      <div className="kva-container flex flex-col items-start justify-between gap-8 py-16 sm:py-20 lg:flex-row lg:items-center">
+      <div className="kva-container flex flex-col items-start justify-between gap-8 py-10 sm:py-12 lg:flex-row lg:items-center">
         <div className="max-w-xl text-kva-cream">
           <h2 className="font-display text-balance text-3xl font-medium leading-tight tracking-tight sm:text-4xl lg:text-[2.75rem]">
             Ready to love your outdoor space?
@@ -35,8 +35,8 @@ export function FinalCta() {
         </div>
         <div className="flex w-full flex-col gap-3 sm:flex-row lg:w-auto">
           <Link
-            href="/#estimate"
-            className="group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-kva-gold px-6 py-3.5 text-base font-semibold text-kva-ink shadow-lg shadow-kva-gold/25 transition-all hover:-translate-y-0.5 hover:bg-kva-gold-deep hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-gold focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest-deep"
+            href="/estimate"
+            className="group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-kva-green px-6 py-3.5 text-base font-semibold text-kva-cream shadow-sm transition-all hover:-translate-y-0.5 hover:bg-kva-green-deep hover:text-kva-cream hover:shadow-md active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-green focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest-deep"
           >
             {hero.primary_cta.label}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />

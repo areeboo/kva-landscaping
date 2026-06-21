@@ -2,14 +2,15 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, Phone, X } from "lucide-react";
+import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { content } from "@/lib/content";
 import { LeafMark } from "@/components/site/LeafMark";
+import { ServicesMenu } from "@/components/sections/ServicesMenu";
 
 const links = [
   { href: "/services", label: "Services" },
-  { href: "/#projects", label: "Projects" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/locations", label: "Service Area" },
   { href: "/about", label: "About" },
   { href: "/#reviews", label: "Reviews" },
@@ -18,6 +19,7 @@ const links = [
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [servicesExpanded, setServicesExpanded] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -79,23 +81,27 @@ export function Nav() {
           </Link>
 
           <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="group relative rounded text-sm font-semibold text-kva-ink/90 transition-colors hover:text-kva-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2 focus-visible:ring-offset-kva-cream"
-              >
-                {l.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-kva-forest transition-all duration-200 group-hover:w-full" />
-              </Link>
-            ))}
+            {links.map((l) =>
+              l.href === "/services" ? (
+                <ServicesMenu key={l.href} />
+              ) : (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="group relative rounded text-sm font-semibold text-kva-ink/90 transition-colors hover:text-kva-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2 focus-visible:ring-offset-kva-cream"
+                >
+                  {l.label}
+                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-kva-forest transition-all duration-200 group-hover:w-full" />
+                </Link>
+              ),
+            )}
           </nav>
 
           <div className="flex items-center gap-3">
             <Link
-              href="/#estimate"
+              href="/estimate"
               onClick={() => setOpen(false)}
-              className="hidden items-center justify-center rounded-full bg-kva-gold px-5 py-2.5 text-sm font-semibold text-kva-ink shadow-sm shadow-kva-gold/30 transition-all hover:-translate-y-0.5 hover:bg-kva-gold-deep hover:text-kva-cream hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-gold focus-visible:ring-offset-2 focus-visible:ring-offset-kva-cream sm:inline-flex"
+              className="hidden items-center justify-center rounded-full bg-kva-green px-5 py-2.5 text-sm font-semibold text-kva-cream shadow-sm transition-all hover:-translate-y-0.5 hover:bg-kva-green-deep hover:text-kva-cream hover:shadow-md active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-green focus-visible:ring-offset-2 focus-visible:ring-offset-kva-cream sm:inline-flex"
             >
               Get Free Estimate
             </Link>
@@ -123,16 +129,58 @@ export function Nav() {
           )}
         >
           <nav className="kva-container flex flex-col gap-1 py-4" aria-label="Mobile">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="rounded-xl px-4 py-3 text-base font-semibold text-kva-ink transition-colors hover:bg-kva-cream-warm hover:text-kva-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest"
-              >
-                {l.label}
-              </Link>
-            ))}
+            {links.map((l) =>
+              l.href === "/services" ? (
+                <div key={l.href}>
+                  <button
+                    type="button"
+                    onClick={() => setServicesExpanded((v) => !v)}
+                    aria-expanded={servicesExpanded}
+                    aria-controls="kva-mobile-services"
+                    className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-base font-semibold text-kva-ink transition-colors hover:bg-kva-cream-warm hover:text-kva-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest"
+                  >
+                    Services
+                    <ChevronDown
+                      className={`h-4 w-4 transition-transform duration-200 ${servicesExpanded ? "rotate-180" : ""}`}
+                      aria-hidden
+                    />
+                  </button>
+                  {servicesExpanded && (
+                    <div
+                      id="kva-mobile-services"
+                      className="ml-4 mt-0.5 flex flex-col gap-0.5 border-l border-kva-stone-light pl-3"
+                    >
+                      {content.services.map((service) => (
+                        <Link
+                          key={service.slug}
+                          href={`/services/${service.slug}`}
+                          onClick={() => setOpen(false)}
+                          className="rounded-lg px-3 py-2 text-sm font-medium text-kva-stone transition-colors hover:bg-kva-cream-warm hover:text-kva-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest"
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                      <Link
+                        href="/services"
+                        onClick={() => setOpen(false)}
+                        className="rounded-lg px-3 py-2 text-sm font-bold text-kva-forest transition-colors hover:bg-kva-cream-warm focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest"
+                      >
+                        View all services →
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="rounded-xl px-4 py-3 text-base font-semibold text-kva-ink transition-colors hover:bg-kva-cream-warm hover:text-kva-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest"
+                >
+                  {l.label}
+                </Link>
+              ),
+            )}
             <div className="mt-2 flex flex-col gap-3 border-t border-kva-stone-light pt-4 sm:flex-row">
               <a
                 href={`tel:${content.hero.secondary_cta.tel}`}
@@ -143,9 +191,9 @@ export function Nav() {
                 {content.business.phone_primary}
               </a>
               <Link
-                href="/#estimate"
+                href="/estimate"
                 onClick={() => setOpen(false)}
-                className="inline-flex flex-1 items-center justify-center rounded-full bg-kva-gold px-5 py-3 text-base font-semibold text-kva-ink shadow-sm transition-colors hover:bg-kva-gold-deep hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-gold focus-visible:ring-offset-2"
+                className="inline-flex flex-1 items-center justify-center rounded-full bg-kva-green px-5 py-3 text-base font-semibold text-kva-cream shadow-sm transition-colors hover:bg-kva-green-deep hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-green focus-visible:ring-offset-2"
               >
                 Get Free Estimate
               </Link>

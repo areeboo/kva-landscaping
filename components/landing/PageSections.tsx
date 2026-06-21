@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, MapPin, Phone, Quote, Star } from "lucide-react";
 import { content, type Review, type Service, type PortfolioItem } from "@/lib/content";
+import { getServiceIcon, serviceCategoryOrder } from "@/lib/service-icons";
 import { citySlug, type City } from "@/lib/landing-pages";
 
 export function DetailHero({
@@ -25,7 +26,7 @@ export function DetailHero({
         className="absolute inset-0 -z-20 object-cover opacity-30"
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-kva-ink via-kva-ink/88 to-kva-forest/60" />
-      <div className="kva-container py-16 sm:py-20 lg:py-24">
+      <div className="kva-container py-10 sm:py-12 lg:py-16">
         <div className="max-w-4xl">
           <p className="text-xs font-medium uppercase tracking-wider text-kva-gold">{eyebrow}</p>
           <h1 className="mt-4 font-display text-balance text-5xl font-medium leading-tight tracking-tight sm:text-6xl lg:text-7xl">
@@ -121,7 +122,7 @@ export function ReviewCards({
   title: string;
 }) {
   return (
-    <section className="bg-kva-cream py-20 sm:py-24">
+    <section className="bg-kva-cream py-12 sm:py-16">
       <div className="kva-container">
         <SectionHeader eyebrow="Local proof" title={title} />
         <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -160,22 +161,44 @@ export function ReviewCards({
 }
 
 export function ServicesGrid({ services = content.services }: { services?: Service[] }) {
+  const groups = serviceCategoryOrder
+    .map((category) => ({
+      category,
+      items: services.filter((service) => service.category === category),
+    }))
+    .filter((group) => group.items.length > 0);
+
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {services.map((service) => (
-        <Link
-          key={service.slug}
-          href={`/services/${service.slug}`}
-          className="group rounded-2xl border border-kva-stone-light bg-kva-cream p-5 transition-shadow hover:shadow-md hover:shadow-kva-forest/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2"
-        >
-          <h3 className="font-display text-2xl font-medium tracking-tight text-kva-ink group-hover:text-kva-forest">
-            {service.title}
+    <div className="space-y-12">
+      {groups.map((group) => (
+        <div key={group.category}>
+          <h3 className="text-xs font-extrabold uppercase tracking-[0.16em] text-kva-forest">
+            {group.category}
           </h3>
-          <p className="mt-3 text-sm leading-relaxed text-kva-stone">{service.blurb}</p>
-          <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-kva-forest">
-            Read service details <ArrowRight className="h-4 w-4" aria-hidden />
-          </span>
-        </Link>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {group.items.map((service) => {
+              const Icon = getServiceIcon(service.icon);
+              return (
+                <Link
+                  key={service.slug}
+                  href={`/services/${service.slug}`}
+                  className="group rounded-2xl border border-kva-stone-light bg-kva-cream p-5 transition-shadow hover:shadow-md hover:shadow-kva-forest/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2"
+                >
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-kva-forest/10 text-kva-forest transition-colors group-hover:bg-kva-green/15 group-hover:text-kva-green-deep">
+                    <Icon className="h-5 w-5" aria-hidden />
+                  </span>
+                  <h4 className="mt-4 font-display text-2xl font-medium tracking-tight text-kva-ink group-hover:text-kva-forest">
+                    {service.title}
+                  </h4>
+                  <p className="mt-3 text-sm leading-relaxed text-kva-stone">{service.blurb}</p>
+                  <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-kva-forest">
+                    Read service details <ArrowRight className="h-4 w-4" aria-hidden />
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
       ))}
     </div>
   );
@@ -221,7 +244,7 @@ export function CtaStrip({
   body?: string;
 }) {
   return (
-    <section className="bg-kva-forest py-16 text-kva-cream">
+    <section className="bg-kva-forest py-10 text-kva-cream">
       <div className="kva-container">
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-center">
           <div className="max-w-2xl">
@@ -230,8 +253,8 @@ export function CtaStrip({
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link
-              href="/#estimate"
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-kva-gold px-6 py-3 text-base font-medium text-kva-ink transition-colors hover:bg-kva-gold-deep hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-gold focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest"
+              href="/estimate"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-kva-green px-6 py-3 text-base font-semibold text-kva-cream shadow-sm transition-colors hover:bg-kva-green-deep hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-green focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest"
             >
               Get a free walk-through <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
@@ -255,7 +278,7 @@ export function PortfolioBand({
   items?: PortfolioItem[];
 }) {
   return (
-    <section className="bg-kva-cream-warm py-16">
+    <section className="bg-kva-cream-warm py-10">
       <div className="kva-container">
         <div className="grid gap-4 md:grid-cols-4">
           {items.slice(0, 4).map((item) => (

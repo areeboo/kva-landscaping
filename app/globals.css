@@ -10,8 +10,10 @@
   --kva-cream-warm: oklch(0.94 0.018 85);      /* warmer surface */
   --kva-stone: oklch(0.42 0.018 80);           /* secondary text */
   --kva-stone-light: oklch(0.85 0.010 80);     /* hairlines */
-  --kva-gold: oklch(0.74 0.13 75);             /* CTA + badges */
-  --kva-gold-deep: oklch(0.62 0.14 65);        /* hover state */
+  --kva-gold: oklch(0.74 0.13 75);             /* badges + small accents */
+  --kva-gold-deep: oklch(0.62 0.14 65);        /* badge hover */
+  --kva-green: oklch(0.50 0.112 147);          /* primary CTA — green */
+  --kva-green-deep: oklch(0.43 0.105 147);     /* primary CTA hover */
   --kva-ink: oklch(0.18 0.02 240);             /* dark text */
 
   --background: var(--kva-cream);
@@ -52,6 +54,8 @@
   --color-kva-stone-light: var(--kva-stone-light);
   --color-kva-gold: var(--kva-gold);
   --color-kva-gold-deep: var(--kva-gold-deep);
+  --color-kva-green: var(--kva-green);
+  --color-kva-green-deep: var(--kva-green-deep);
   --color-kva-ink: var(--kva-ink);
 
   --font-sans: var(--font-kva-sans);

@@ -35,8 +35,8 @@ export function MobileStickyBar() {
           Call
         </a>
         <a
-          href="#estimate"
-          className="flex flex-[1.5] items-center justify-center gap-2 rounded-full bg-kva-gold px-4 py-3 text-sm font-medium text-kva-ink shadow-md transition-colors hover:bg-kva-gold-deep hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-gold focus-visible:ring-offset-2"
+          href="/estimate"
+          className="flex flex-[1.5] items-center justify-center gap-2 rounded-full bg-kva-green px-4 py-3 text-sm font-semibold text-kva-cream shadow-sm transition-colors hover:bg-kva-green-deep hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-green focus-visible:ring-offset-2"
         >
           Get Estimate
           <ArrowRight className="h-4 w-4" aria-hidden />

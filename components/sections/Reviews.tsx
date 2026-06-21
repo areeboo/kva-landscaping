@@ -13,7 +13,7 @@ const sourceColors: Record<string, string> = {
 
 export function Reviews() {
   return (
-    <section id="reviews" className="relative scroll-mt-24 bg-kva-cream py-24 sm:py-28 lg:py-32">
+    <section id="reviews" className="relative scroll-mt-24 bg-kva-cream py-16 sm:py-28 lg:py-32">
       <div className="kva-container">
         <div className="mx-auto max-w-3xl text-center">
           <span className="inline-flex rounded-full border border-kva-stone-light bg-kva-cream-warm px-3 py-1 text-xs font-medium uppercase tracking-wider text-kva-stone">

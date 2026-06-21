@@ -104,7 +104,7 @@ export default async function LocationDetailPage({ params }: Props) {
       />
       <TrustStrip />
 
-      <section className="bg-paper py-20 sm:py-24">
+      <section className="bg-paper py-12 sm:py-16">
         <div className="kva-container">
           <article className="prose prose-stone max-w-none">
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
@@ -128,7 +128,7 @@ export default async function LocationDetailPage({ params }: Props) {
                     ))}
                   </div>
                   <Link
-                    href="/#estimate"
+                    href="/estimate"
                     className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-kva-forest px-5 py-3 text-sm font-medium text-kva-cream transition-colors hover:bg-kva-forest-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2"
                   >
                     Get a free walk-through <ArrowRight className="h-4 w-4" aria-hidden />
@@ -140,7 +140,7 @@ export default async function LocationDetailPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-kva-cream py-20 sm:py-24">
+      <section className="bg-kva-cream py-12 sm:py-16">
         <div className="kva-container">
           <SectionHeader
             eyebrow={`What we do in ${city.city}`}
@@ -153,7 +153,7 @@ export default async function LocationDetailPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-paper py-20 sm:py-24">
+      <section className="bg-paper py-12 sm:py-16">
         <div className="kva-container">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
@@ -191,7 +191,7 @@ export default async function LocationDetailPage({ params }: Props) {
 
       <ReviewCards reviews={reviews} title={`What ${city.city}-area homeowners are saying`} />
 
-      <section className="bg-paper py-20 sm:py-24">
+      <section className="bg-paper py-12 sm:py-16">
         <div className="kva-container">
           <SectionHeader
             eyebrow="Neighboring pages"

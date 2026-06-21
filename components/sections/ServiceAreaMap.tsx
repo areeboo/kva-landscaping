@@ -20,7 +20,7 @@ export function ServiceAreaMap() {
   return (
     <section
       id="service-area"
-      className="relative scroll-mt-24 overflow-hidden bg-gradient-to-br from-kva-forest-deep via-kva-forest to-kva-forest-deep py-20 text-kva-cream sm:py-24"
+      className="relative scroll-mt-24 overflow-hidden bg-gradient-to-br from-kva-forest-deep via-kva-forest to-kva-forest-deep py-12 text-kva-cream sm:py-16"
     >
       <div className="kva-container grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-10">
         {/* Illustrated map */}

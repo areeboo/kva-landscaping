@@ -50,7 +50,7 @@ export default function ServicesIndexPage() {
         chips={["9 years local", "Top Pro 2025", "165+ reviews", "~1 hour response"]}
       />
       <TrustStrip />
-      <section id="services" className="bg-paper py-20 sm:py-24">
+      <section id="services" className="bg-paper py-12 sm:py-16">
         <div className="kva-container">
           <SectionHeader
             eyebrow="What we do"
@@ -63,7 +63,7 @@ export default function ServicesIndexPage() {
         </div>
       </section>
       <Process />
-      <section className="bg-kva-cream py-20 sm:py-24">
+      <section className="bg-kva-cream py-12 sm:py-16">
         <div className="kva-container">
           <SectionHeader
             eyebrow="Where we work"

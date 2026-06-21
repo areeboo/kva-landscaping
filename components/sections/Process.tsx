@@ -5,7 +5,7 @@ import { content } from "@/lib/content";
 
 export function Process() {
   return (
-    <section id="process" className="relative scroll-mt-24 bg-kva-forest py-24 text-kva-cream sm:py-28 lg:py-32">
+    <section id="process" className="relative scroll-mt-24 bg-kva-forest py-16 text-kva-cream sm:py-28 lg:py-32">
       <div className="kva-container">
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-flex rounded-full border border-kva-cream/20 bg-kva-cream/5 px-3 py-1 text-xs font-medium uppercase tracking-wider text-kva-cream/80">

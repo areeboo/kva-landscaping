@@ -26,7 +26,7 @@ export function Hero() {
         }}
       />
 
-      <div className="kva-container flex min-h-[34rem] items-center py-20 sm:min-h-[36rem] sm:py-24 lg:min-h-[38rem]">
+      <div className="kva-container flex min-h-[34rem] items-center py-12 sm:min-h-[36rem] sm:py-16 lg:min-h-[38rem]">
         <div className="max-w-xl text-kva-cream">
           <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-kva-cream/75">
             Landscaping · Hardscaping · Maintenance
@@ -41,7 +41,7 @@ export function Hero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
               href={hero.primary_cta.anchor}
-              className="group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-kva-gold px-6 py-3.5 text-base font-semibold text-kva-ink shadow-lg shadow-kva-gold/25 transition-all hover:-translate-y-0.5 hover:bg-kva-gold-deep hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-gold focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest-deep"
+              className="group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-kva-green px-6 py-3.5 text-base font-semibold text-kva-cream shadow-sm transition-all hover:-translate-y-0.5 hover:bg-kva-green-deep hover:text-kva-cream hover:shadow-md active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-green focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest-deep"
             >
               {hero.primary_cta.label}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />

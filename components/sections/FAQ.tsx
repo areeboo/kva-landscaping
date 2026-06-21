@@ -9,7 +9,7 @@ export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="relative scroll-mt-24 bg-paper py-24 sm:py-28">
+    <section id="faq" className="relative scroll-mt-24 bg-paper py-16 sm:py-28">
       <div className="kva-container">
         <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
@@ -22,7 +22,7 @@ export function FAQ() {
             <p className="mt-5 text-pretty text-base leading-relaxed text-kva-stone">
               Not seeing yours?{" "}
               <a
-                href="#estimate"
+                href="/estimate"
                 className="rounded font-medium text-kva-forest underline-offset-4 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2"
               >
                 Ask in the estimate form
