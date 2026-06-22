@@ -29,17 +29,17 @@ const grouped = serviceCategoryOrder
   }))
   .filter((group) => group.items.length > 0);
 
-// Per-category lead icon + a real KVA photo anchoring each card.
+// Per-category lead icon + a soft fade-to-light landscape photo anchoring each card.
 const categoryMeta: Record<string, { icon: LucideIcon; photo: string; alt: string }> = {
-  "Lawn Care": { icon: Sprout, photo: "/images/portfolio/fresh-mow.jpg", alt: "Freshly mowed, striped lawn" },
-  "Planting & Beds": { icon: Flower2, photo: "/images/mulch-beds.webp", alt: "Fresh mulch and planted beds" },
-  Hardscape: { icon: LayoutGrid, photo: "/images/outdoor-living.webp", alt: "Paver patio and outdoor living space" },
-  "Tree & Shrub": { icon: Trees, photo: "/images/portfolio/brick-home-shrubs.jpg", alt: "Shaped shrubs along a brick home" },
-  "Irrigation & Water": { icon: Droplets, photo: "/images/irrigation.jpg", alt: "Lawn sprinkler running over green grass" },
-  Seasonal: { icon: Snowflake, photo: "/images/snow-plowing.jpg", alt: "Snow-cleared driveway in winter" },
+  "Lawn Care": { icon: Sprout, photo: "/images/menu/lawn.webp", alt: "Manicured, striped lawn at golden hour" },
+  "Planting & Beds": { icon: Flower2, photo: "/images/menu/beds.webp", alt: "White hydrangea beds in bloom" },
+  Hardscape: { icon: LayoutGrid, photo: "/images/menu/hardscape.webp", alt: "Flagstone patio and stone steps" },
+  "Tree & Shrub": { icon: Trees, photo: "/images/menu/tree-shrub.webp", alt: "Sculpted topiary and shaped shrubs" },
+  "Irrigation & Water": { icon: Droplets, photo: "/images/menu/water.webp", alt: "Stone water feature spilling into a pool" },
+  Seasonal: { icon: Snowflake, photo: "/images/menu/seasonal.webp", alt: "Snow-covered evergreens in winter" },
 };
 
-const fallbackMeta = { icon: Leaf, photo: "/images/portfolio/fresh-mow.jpg", alt: "KVA landscaping work" };
+const fallbackMeta = { icon: Leaf, photo: "/images/menu/lawn.webp", alt: "KVA landscaping work" };
 
 export function ServicesMenu() {
   const [open, setOpen] = useState(false);
@@ -224,16 +224,17 @@ export function ServicesMenu() {
                             ))}
                           </ul>
                         </div>
-                        <div className="relative mt-auto min-h-[4.5rem] flex-1">
+                        <div className="relative mt-auto min-h-[6rem] flex-1">
                           <Image
                             src={meta.photo}
                             alt={meta.alt}
                             fill
                             sizes="(min-width: 1280px) 320px, (min-width: 1024px) 30vw, 45vw"
-                            className="object-cover"
+                            className="object-cover object-bottom"
                           />
+                          {/* Blend the photo's lighter top into the cream card above */}
                           <span
-                            className="absolute inset-0 bg-gradient-to-t from-kva-ink/15 to-transparent"
+                            className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-kva-cream to-transparent"
                             aria-hidden
                           />
                         </div>
