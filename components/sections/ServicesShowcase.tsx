@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { content } from "@/lib/content";
 import { getServiceIcon } from "@/lib/service-icons";
+import { Reveal } from "@/components/site/Reveal";
 
 // Six featured services — one per category — shown with photos on the homepage.
 const featuredSlugs = [
@@ -21,7 +22,7 @@ const featured = featuredSlugs
 export function ServicesShowcase() {
   return (
     <section id="services" className="scroll-mt-24 bg-kva-cream py-12 sm:py-16">
-      <div className="kva-container">
+      <Reveal className="kva-container">
         <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-end">
           <div className="max-w-2xl">
             <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-kva-forest">Our services</p>
@@ -73,7 +74,7 @@ export function ServicesShowcase() {
             );
           })}
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

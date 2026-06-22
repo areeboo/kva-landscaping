@@ -21,6 +21,20 @@ export function cityNames() {
   return content.business.service_area_zips.map((city) => city.city);
 }
 
+// BreadcrumbList JSON-LD — Google rich-result eligible. Pass page-path crumbs in order.
+export function breadcrumbSchema(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${siteUrl}${item.path}`,
+    })),
+  };
+}
+
 export function serviceAreaSchema() {
   return content.business.service_area_zips.map((city) => ({
     "@type": "City" as const,

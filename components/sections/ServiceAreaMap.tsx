@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { content } from "@/lib/content";
 import { citySlug } from "@/lib/landing-pages";
 import { LeafMark } from "@/components/site/LeafMark";
+import { Reveal } from "@/components/site/Reveal";
 
 // Aesthetic placement of the six real service cities around the Sterling hub.
 const points: Record<string, { x: number; y: number; lx: number; ly: number; anchor: "start" | "end" | "middle" }> = {
@@ -22,7 +23,7 @@ export function ServiceAreaMap() {
       id="service-area"
       className="relative scroll-mt-24 overflow-hidden bg-gradient-to-br from-kva-forest-deep via-kva-forest to-kva-forest-deep py-12 text-kva-cream sm:py-16"
     >
-      <div className="kva-container grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-10">
+      <Reveal className="kva-container grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-10">
         {/* Illustrated map */}
         <div className="mx-auto w-full max-w-[18rem]">
           <svg viewBox="0 0 260 260" role="img" aria-labelledby="kva-map-title" className="h-auto w-full">
@@ -94,15 +95,15 @@ export function ServiceAreaMap() {
           <LeafMark className="h-12 w-12 flex-none" />
           <div>
             <h3 className="font-display text-xl font-medium leading-tight text-kva-ink">
-              Local team. Neighbors you can trust.
+              A local crew — not a call center.
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-kva-stone">
-              We&apos;re nearby, responsive, and invested in the same communities we live in — not driving in from
-              across the region.
+              Nine years working the same ten-mile radius around Sterling. We know the Loudoun clay, the HOA paver
+              rules, and when to schedule hardscape around the freeze-thaw — because we live here too.
             </p>
           </div>
         </aside>
-      </div>
+      </Reveal>
     </section>
   );
 }

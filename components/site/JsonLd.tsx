@@ -23,7 +23,8 @@ export function JsonLd() {
     paymentAccepted: content.business.payment_methods.join(", "),
     currenciesAccepted: "USD",
     slogan: content.hero.tagline,
-    foundingDate: String(new Date().getFullYear() - content.business.years_in_business),
+    // hardcoded: update when years_in_business changes (was computed, drifted each Jan)
+    foundingDate: "2017",
     address: {
       "@type": "PostalAddress",
       addressLocality: content.business.city,

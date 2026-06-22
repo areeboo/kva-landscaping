@@ -12,7 +12,7 @@ export function Hero() {
         src={hero.image}
         alt="Stone patio and fire pit framed by mature landscaping on a Northern Virginia property"
         fill
-        priority
+        preload
         sizes="100vw"
         className="-z-20 object-cover object-[center_52%]"
       />

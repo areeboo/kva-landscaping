@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, MapPin } from "lucide-react";
 import { content } from "@/lib/content";
 import {
+  breadcrumbSchema,
   cityCopy,
   cityDistanceFromSterling,
   cityNeighborhoods,
@@ -92,6 +93,12 @@ export default async function LocationDetailPage({ params }: Props) {
     },
     hasOfferCatalog: offerCatalogSchema(),
   };
+
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Service Areas", path: "/locations" },
+    { name: `${city.city}, VA`, path: `/locations/${citySlug(city.city)}` },
+  ]);
 
   return (
     <>
@@ -229,6 +236,7 @@ export default async function LocationDetailPage({ params }: Props) {
       <Footer />
       <MobileStickyBar />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
     </>
   );
 }

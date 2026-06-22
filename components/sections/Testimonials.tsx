@@ -1,12 +1,14 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { BadgeCheck, ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { content } from "@/lib/content";
+import { Reveal } from "@/components/site/Reveal";
 
 export function Testimonials() {
   const trackRef = useRef<HTMLUListElement>(null);
   const { reviews_featured, review_aggregate } = content;
+  const [active, setActive] = useState(0);
 
   function scrollByCard(direction: 1 | -1) {
     const track = trackRef.current;
@@ -14,15 +16,16 @@ export function Testimonials() {
     const card = track.querySelector<HTMLElement>("li");
     const amount = card ? card.offsetWidth + 20 : track.clientWidth * 0.8;
     track.scrollBy({ left: amount * direction, behavior: "smooth" });
+    setActive((prev) => Math.min(reviews_featured.length - 1, Math.max(0, prev + direction)));
   }
 
   return (
     <section id="reviews" className="scroll-mt-24 border-y border-kva-stone-light bg-kva-cream py-12 sm:py-16">
-      <div className="kva-container">
+      <Reveal className="kva-container">
         <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-end">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-kva-forest">What our clients say</p>
-            <h2 className="mt-3 font-display text-balance text-4xl font-medium leading-tight tracking-tight text-kva-ink sm:text-5xl">
+            <h2 className="mt-3 font-display text-balance text-5xl font-medium leading-tight tracking-tight text-kva-ink sm:text-6xl">
               Trusted across the neighborhood.
             </h2>
             <div className="mt-4 flex items-center gap-2 text-sm text-kva-stone">
@@ -79,7 +82,7 @@ export function Testimonials() {
                   ))}
                 </span>
               </div>
-              <blockquote className="mt-4 flex-1 text-pretty font-display text-[15px] leading-relaxed text-kva-ink/85">
+              <blockquote className="mt-4 flex-1 text-pretty text-[15px] leading-relaxed text-kva-ink/85">
                 {review.text}
               </blockquote>
               <figcaption className="mt-5 border-t border-kva-stone-light pt-4 text-sm">
@@ -103,7 +106,10 @@ export function Testimonials() {
             </li>
           ))}
         </ul>
-      </div>
+        <p className="sr-only" aria-live="polite">
+          Showing review {active + 1} of {reviews_featured.length}
+        </p>
+      </Reveal>
     </section>
   );
 }

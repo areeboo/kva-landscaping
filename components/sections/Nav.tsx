@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -20,6 +20,7 @@ export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [servicesExpanded, setServicesExpanded] = useState(false);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -31,7 +32,10 @@ export function Nav() {
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") {
+        setOpen(false);
+        hamburgerRef.current?.focus();
+      }
     };
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
@@ -74,7 +78,7 @@ export function Nav() {
             <LeafMark className="h-9 w-9 transition-transform group-hover:scale-105" />
             <span className="flex flex-col leading-none">
               <span className="font-display text-[1.7rem] tracking-tight">KVA</span>{" "}
-              <span className="mt-0.5 text-[0.56rem] font-extrabold uppercase tracking-[0.24em] text-kva-stone">
+              <span className="mt-0.5 text-[0.68rem] font-extrabold uppercase tracking-[0.18em] text-kva-stone">
                 Landscaping
               </span>
             </span>
@@ -103,9 +107,10 @@ export function Nav() {
               onClick={() => setOpen(false)}
               className="hidden items-center justify-center rounded-full bg-kva-green px-5 py-2.5 text-sm font-semibold text-kva-cream shadow-sm transition-all hover:-translate-y-0.5 hover:bg-kva-green-deep hover:text-kva-cream hover:shadow-md active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-green focus-visible:ring-offset-2 focus-visible:ring-offset-kva-cream sm:inline-flex"
             >
-              Get Free Estimate
+              Free Walk-Through
             </Link>
             <button
+              ref={hamburgerRef}
               type="button"
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
@@ -195,7 +200,7 @@ export function Nav() {
                 onClick={() => setOpen(false)}
                 className="inline-flex flex-1 items-center justify-center rounded-full bg-kva-green px-5 py-3 text-base font-semibold text-kva-cream shadow-sm transition-colors hover:bg-kva-green-deep hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-green focus-visible:ring-offset-2"
               >
-                Get Free Estimate
+                Free Walk-Through
               </Link>
             </div>
           </nav>

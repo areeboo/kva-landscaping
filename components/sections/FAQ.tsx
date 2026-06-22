@@ -4,13 +4,14 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus } from "lucide-react";
 import { content } from "@/lib/content";
+import { Reveal } from "@/components/site/Reveal";
 
 export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="relative scroll-mt-24 bg-paper py-16 sm:py-28">
-      <div className="kva-container">
+    <section id="faq" className="relative scroll-mt-24 bg-kva-cream-warm py-16 sm:py-28">
+      <Reveal className="kva-container">
         <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
             <span className="inline-flex rounded-full border border-kva-stone-light bg-kva-cream-warm px-3 py-1 text-xs font-medium uppercase tracking-wider text-kva-stone">
@@ -81,7 +82,7 @@ export function FAQ() {
             </ul>
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

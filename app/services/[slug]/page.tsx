@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { content } from "@/lib/content";
 import {
+  breadcrumbSchema,
   cityNames,
   findService,
   offerCatalogSchema,
@@ -54,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       url: `${siteUrl}/services/${service.slug}`,
-      images: [{ url: "/images/portfolio/brick-home-shrubs.jpg", width: 1200, height: 630 }],
+      images: [{ url: service.image, width: 1200, height: 630, alt: `${service.title} by KVA Landscaping in Sterling, VA` }],
     },
   };
 }
@@ -82,6 +83,12 @@ export default async function ServiceDetailPage({ params }: Props) {
     hasOfferCatalog: offerCatalogSchema(),
     url: `${siteUrl}/services/${service.slug}`,
   };
+
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: service.title, path: `/services/${service.slug}` },
+  ]);
 
   return (
     <>
@@ -191,6 +198,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       <Footer />
       <MobileStickyBar />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
     </>
   );
 }

@@ -67,7 +67,7 @@ export function Reviews() {
                   <div className="text-xs text-kva-stone">{r.date}</div>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <span className="flex items-center gap-0.5">
+                  <span className="flex items-center gap-0.5" role="img" aria-label={`${r.rating} out of 5 stars`}>
                     {Array.from({ length: 5 }).map((_, j) => (
                       <Star
                         key={j}

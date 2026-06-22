@@ -142,8 +142,7 @@ export function BeforeAfterSlider({
           src={after.src}
           alt={after.alt}
           fill
-          priority
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1200px"
+          sizes="(max-width: 1024px) 100vw, 720px"
           className="object-cover"
           draggable={false}
         />
@@ -158,7 +157,7 @@ export function BeforeAfterSlider({
             src={before.src}
             alt=""
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1200px"
+            sizes="(max-width: 1024px) 100vw, 720px"
             className="object-cover"
             draggable={false}
           />
@@ -191,6 +190,7 @@ export function BeforeAfterSlider({
               type="button"
               role="slider"
               aria-label="Before-after comparison slider"
+              aria-describedby="ba-slider-instructions"
               aria-valuemin={0}
               aria-valuemax={100}
               aria-valuenow={Math.round(position)}
@@ -231,7 +231,7 @@ export function BeforeAfterSlider({
             {caption}
           </p>
         </div>
-        <p className="text-xs leading-relaxed text-kva-stone sm:max-w-xs sm:text-right">
+        <p id="ba-slider-instructions" className="text-xs leading-relaxed text-kva-stone sm:max-w-xs sm:text-right">
           Drag the gold handle — or use arrow keys — to reveal the before photo.
         </p>
       </figcaption>

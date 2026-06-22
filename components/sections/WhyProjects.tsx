@@ -2,12 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { BeforeAfterSlider } from "@/components/portfolio/BeforeAfterSlider";
+import { Reveal } from "@/components/site/Reveal";
 
 const reasons = [
-  "Clear communication and dependable scheduling",
-  "Quality workmanship with lasting results",
-  "Customized solutions for your property",
-  "Respect for your home and your time",
+  "We show up when we say we will",
+  "A senior crew lead walks the whole property before we price it",
+  "Same family-run crew, same number — nine years in NoVA",
+  "We leave it clean and level, and come back if anything's off",
 ];
 
 const tiles = [
@@ -20,7 +21,7 @@ const tiles = [
 export function WhyProjects() {
   return (
     <section id="projects" className="scroll-mt-24 bg-kva-cream-warm py-12 sm:py-16">
-      <div className="kva-container grid gap-12 lg:grid-cols-12 lg:gap-14">
+      <Reveal className="kva-container grid gap-12 lg:grid-cols-12 lg:gap-14">
         {/* Why KVA */}
         <div className="lg:col-span-4">
           <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-kva-forest">
@@ -96,7 +97,7 @@ export function WhyProjects() {
             ))}
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

@@ -1,4 +1,4 @@
-import { ShieldCheck, Award, Hammer, Leaf } from "lucide-react";
+import { ShieldCheck, Award, Hammer, Clock } from "lucide-react";
 
 const items = [
   {
@@ -17,9 +17,9 @@ const items = [
     body: "Nearly a decade in NoVA, 206 jobs hired through Thumbtack",
   },
   {
-    icon: Leaf,
-    title: "Free On-Site Estimates",
-    body: "A real number after we walk the property",
+    icon: Clock,
+    title: "Fast to Reply",
+    body: "Most NoVA crews take 2–3 days — we usually reply same day",
   },
 ];
 

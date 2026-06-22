@@ -46,8 +46,8 @@ export function ServicesMenu() {
     <div ref={wrapRef} className="relative" onMouseEnter={handleOpen} onMouseLeave={handleScheduleClose}>
       <button
         type="button"
-        aria-haspopup="true"
         aria-expanded={open}
+        aria-controls="kva-services-flyout"
         onClick={() => setOpen((v) => !v)}
         onKeyDown={(e) => {
           if (e.key === "ArrowDown") {
@@ -66,7 +66,7 @@ export function ServicesMenu() {
       </button>
 
       <div
-        role="menu"
+        id="kva-services-flyout"
         aria-label="Services"
         className={`absolute left-0 top-full z-50 mt-3 w-[44rem] max-w-[calc(100vw-2rem)] transition-all duration-150 ${
           open ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"
@@ -86,7 +86,6 @@ export function ServicesMenu() {
                       <li key={service.slug}>
                         <Link
                           href={`/services/${service.slug}`}
-                          role="menuitem"
                           onClick={() => setOpen(false)}
                           className="group/item flex items-center gap-2.5 rounded-lg px-3 py-1.5 transition-colors hover:bg-kva-cream-warm focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest"
                         >

@@ -1,7 +1,7 @@
 "use client";
 
 import { type ChangeEvent, type DragEvent, useActionState, useRef, useState } from "react";
-import { ArrowRight, CheckCircle2, ImagePlus, Phone, X } from "lucide-react";
+import { ArrowRight, CheckCircle2, ImagePlus, Phone, Star, X } from "lucide-react";
 import { submitEstimate, type EstimateState } from "@/app/actions/submit-estimate";
 import { content } from "@/lib/content";
 
@@ -83,6 +83,21 @@ export function EstimateForm() {
                 {estimate_form.response_pill ?? "Usually replies within an hour during business hours."}
               </div>
             </div>
+
+            {/* Social proof — reassurance next to the form */}
+            <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-kva-cream/15 pt-6 text-sm text-kva-cream/85">
+              <span className="flex items-center gap-0.5" role="img" aria-label={`${content.review_aggregate.weighted_rating} out of 5 stars`}>
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-kva-gold text-kva-gold" aria-hidden />
+                ))}
+              </span>
+              <span className="font-semibold text-kva-cream">
+                {content.review_aggregate.weighted_rating.toFixed(1)}
+              </span>
+              <span>· {content.review_aggregate.total_review_count}+ reviews</span>
+              <span className="text-kva-cream/40" aria-hidden>·</span>
+              <span>Class A VA Contractor · Thumbtack Top Pro 2025</span>
+            </div>
           </div>
 
           <div className="lg:col-span-7">
@@ -97,6 +112,13 @@ export function EstimateForm() {
                 <p className="mt-3 text-sm text-kva-cream/70">
                   {state.message ?? "If it is urgent, give us a call directly."}
                 </p>
+                <a
+                  href={`tel:${content.hero.secondary_cta.tel}`}
+                  className="mt-5 inline-flex items-center justify-center gap-2 rounded-full border border-kva-cream/30 px-5 py-2.5 text-sm font-semibold text-kva-cream transition-colors hover:bg-kva-cream hover:text-kva-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-cream focus-visible:ring-offset-2 focus-visible:ring-offset-kva-ink"
+                >
+                  <Phone className="h-4 w-4" aria-hidden />
+                  Call {business.phone_primary}
+                </a>
               </div>
             ) : (
               <form
@@ -205,11 +227,11 @@ export function EstimateForm() {
                   disabled={pending}
                   className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-kva-green px-6 py-3.5 text-base font-semibold text-kva-cream shadow-sm transition-all hover:-translate-y-0.5 hover:bg-kva-green-deep hover:text-kva-cream hover:shadow-md active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-green focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest-deep disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
                 >
-                  {pending ? "Sending…" : "Send"}
+                  {pending ? "Sending…" : "Request Free Walk-Through"}
                   {!pending && <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />}
                 </button>
                 <p className="text-xs text-kva-cream/75">
-                  We will not spam you or share your info. One reply within a business day, then a walk-through if you want it.
+                  <span className="text-kva-gold">*</span> required. We will not spam you or share your info. One reply within a business day, then a walk-through if you want it.
                 </p>
               </form>
             )}
