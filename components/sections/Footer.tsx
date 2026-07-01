@@ -50,12 +50,12 @@ export function Footer() {
             <h3 className="text-xs font-bold uppercase tracking-[0.16em] text-kva-cream/70">Reach us</h3>
             <ul className="mt-4 space-y-2 text-sm text-kva-cream/85">
               <li>
-                <a href={`tel:${hero.secondary_cta.tel}`} className="transition-colors hover:text-kva-gold">
+                <a href={`tel:${hero.secondary_cta.tel}`} className="inline-block py-1 transition-colors hover:text-kva-gold">
                   {business.phone_primary}
                 </a>
               </li>
               <li>
-                <a href={`mailto:${business.email}`} className="break-all transition-colors hover:text-kva-gold">
+                <a href={`mailto:${business.email}`} className="inline-block break-all py-1 transition-colors hover:text-kva-gold">
                   {business.email}
                 </a>
               </li>
