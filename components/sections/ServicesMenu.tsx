@@ -189,8 +189,8 @@ export function ServicesMenu() {
               </div>
 
               {/* Category cards */}
-              <div className="min-w-0 flex-1 overflow-y-auto p-5">
-                <div className="grid grid-cols-2 gap-4 xl:grid-cols-3">
+              <div className="min-w-0 flex-1 overflow-y-auto p-4">
+                <div className="grid grid-cols-2 gap-3 xl:grid-cols-3">
                   {grouped.map((group) => {
                     const meta = categoryMeta[group.category] ?? fallbackMeta;
                     const Icon = meta.icon;
@@ -199,20 +199,20 @@ export function ServicesMenu() {
                         key={group.category}
                         className="flex flex-col overflow-hidden rounded-xl border border-kva-stone-light bg-kva-cream"
                       >
-                        <div className="p-4 pb-3">
-                          <div className="flex items-center gap-2 border-b border-kva-stone-light pb-2.5">
+                        <div className="p-3.5 pb-2.5">
+                          <div className="flex items-center gap-2 border-b border-kva-stone-light pb-2">
                             <Icon className="h-4 w-4 flex-none text-kva-forest" aria-hidden />
                             <span className="font-display text-base font-medium tracking-tight text-kva-ink">
                               {group.category}
                             </span>
                           </div>
-                          <ul className="mt-2 space-y-0.5">
+                          <ul className="mt-1.5">
                             {group.items.map((service) => (
                               <li key={service.slug}>
                                 <Link
                                   href={`/services/${service.slug}`}
                                   onClick={() => setOpen(false)}
-                                  className="group/item flex items-center justify-between gap-2 rounded-md px-2 py-1.5 text-[13px] font-medium text-kva-stone transition-colors hover:bg-kva-cream-warm hover:text-kva-forest-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest"
+                                  className="group/item flex items-center justify-between gap-2 rounded-md px-2 py-1 text-[13px] font-medium text-kva-stone transition-colors hover:bg-kva-cream-warm hover:text-kva-forest-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest"
                                 >
                                   <span className="min-w-0 truncate">{service.title}</span>
                                   <ChevronRight
@@ -224,7 +224,7 @@ export function ServicesMenu() {
                             ))}
                           </ul>
                         </div>
-                        <div className="relative mt-auto min-h-[6rem] flex-1">
+                        <div className="relative mt-auto min-h-[4.5rem] flex-1">
                           <Image
                             src={meta.photo}
                             alt={meta.alt}
@@ -232,9 +232,10 @@ export function ServicesMenu() {
                             sizes="(min-width: 1280px) 320px, (min-width: 1024px) 30vw, 45vw"
                             className="object-cover object-bottom"
                           />
-                          {/* Blend the photo's lighter top into the cream card above */}
+                          {/* Fixed-height blend so the photo sits the same short distance below the
+                              last service on every card, regardless of how tall the image grows. */}
                           <span
-                            className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-kva-cream to-transparent"
+                            className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-kva-cream via-kva-cream/70 to-transparent"
                             aria-hidden
                           />
                         </div>
@@ -249,7 +250,7 @@ export function ServicesMenu() {
             <Link
               href="/services"
               onClick={() => setOpen(false)}
-              className="group/foot flex flex-none items-center justify-between gap-4 border-t border-kva-stone-light bg-kva-cream-warm/50 px-6 py-4 transition-colors hover:bg-kva-cream-warm focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-kva-forest"
+              className="group/foot flex flex-none items-center justify-between gap-4 border-t border-kva-stone-light bg-kva-cream-warm/50 px-6 py-3 transition-colors hover:bg-kva-cream-warm focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-kva-forest"
             >
               <span className="flex items-center gap-3">
                 <Leaf className="h-5 w-5 flex-none text-kva-forest" aria-hidden />
