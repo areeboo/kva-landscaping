@@ -18,7 +18,7 @@ export function Footer() {
   const { business, footer, hero } = content;
 
   return (
-    <footer className="bg-kva-forest-deep pt-16 pb-10 text-kva-cream/70">
+    <footer className="bg-kva-forest-deep pt-16 pb-32 text-kva-cream/70 md:pb-10">
       <div className="kva-container">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">

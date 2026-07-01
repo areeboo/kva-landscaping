@@ -25,10 +25,10 @@ export function Testimonials() {
         <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-end">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-kva-forest">What our clients say</p>
-            <h2 className="mt-3 font-display text-balance text-5xl font-medium leading-tight tracking-tight text-kva-ink sm:text-6xl">
+            <h2 className="mt-3 font-display text-balance text-4xl font-medium leading-tight tracking-tight text-kva-ink sm:text-6xl">
               Trusted across the neighborhood.
             </h2>
-            <div className="mt-4 flex items-center gap-2 text-sm text-kva-stone">
+            <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm leading-snug text-kva-stone">
               <span className="flex items-center gap-0.5" aria-hidden>
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-kva-gold text-kva-gold" />
@@ -68,7 +68,7 @@ export function Testimonials() {
           {reviews_featured.map((review) => (
             <li
               key={`${review.source}-${review.author}-${review.date}`}
-              className="flex w-[85%] flex-none snap-start flex-col rounded-2xl border border-kva-stone-light bg-kva-cream-warm/40 p-6 sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-2.5rem)/3)]"
+              className="flex w-full flex-none snap-start flex-col rounded-2xl border border-kva-stone-light bg-kva-cream-warm/40 p-6 sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-2.5rem)/3)]"
             >
               <div className="flex items-center justify-between">
                 <Quote className="h-6 w-6 text-kva-gold" aria-hidden />

@@ -127,13 +127,13 @@ export function Nav() {
         <div
           id="kva-mobile-menu"
           className={cn(
-            "overflow-hidden border-t transition-[max-height,opacity] duration-300 lg:hidden",
+            "border-t transition-[max-height,opacity] duration-300 lg:hidden",
             open
-              ? "max-h-[85vh] border-kva-stone-light/70 opacity-100"
-              : "pointer-events-none max-h-0 border-transparent opacity-0",
+              ? "max-h-[calc(100dvh-68px)] overflow-y-auto overscroll-contain border-kva-stone-light/70 opacity-100 sm:max-h-[calc(100dvh-76px)]"
+              : "pointer-events-none max-h-0 overflow-hidden border-transparent opacity-0",
           )}
         >
-          <nav className="kva-container flex flex-col gap-1 py-4" aria-label="Mobile">
+          <nav className="kva-container flex flex-col gap-1 py-4 pb-[calc(1rem+env(safe-area-inset-bottom))]" aria-label="Mobile">
             {links.map((l) =>
               l.href === "/services" ? (
                 <div key={l.href}>

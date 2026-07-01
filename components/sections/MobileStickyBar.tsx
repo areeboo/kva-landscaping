@@ -30,17 +30,17 @@ export function MobileStickyBar() {
       <div className="mx-auto flex max-w-md items-center gap-2">
         <a
           href={`tel:${content.hero.secondary_cta.tel}`}
-          className="flex flex-1 items-center justify-center gap-2 rounded-full border border-kva-forest bg-kva-cream px-3 py-3 text-sm font-semibold text-kva-forest transition-colors hover:bg-kva-forest hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2"
+          className="flex min-w-0 flex-[0.72] items-center justify-center gap-2 rounded-full border border-kva-forest bg-kva-cream px-3 py-3 text-sm font-semibold text-kva-forest transition-colors hover:bg-kva-forest hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2"
           aria-label={`Call KVA at ${content.business.phone_primary}`}
         >
           <Phone className="h-4 w-4 flex-none" aria-hidden />
-          {content.business.phone_primary}
+          <span className="truncate">Call</span>
         </a>
         <a
           href="/estimate"
-          className="flex flex-[1.4] items-center justify-center gap-2 rounded-full bg-kva-green px-4 py-3 text-sm font-semibold text-kva-cream shadow-sm transition-colors hover:bg-kva-green-deep hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-green focus-visible:ring-offset-2"
+          className="flex min-w-0 flex-[1.35] items-center justify-center gap-2 rounded-full bg-kva-green px-4 py-3 text-sm font-semibold text-kva-cream shadow-sm transition-colors hover:bg-kva-green-deep hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-green focus-visible:ring-offset-2"
         >
-          Free Walk-Through
+          <span className="truncate">Free Walk-Through</span>
           <ArrowRight className="h-4 w-4 flex-none" aria-hidden />
         </a>
       </div>

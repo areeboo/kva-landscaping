@@ -51,6 +51,7 @@ export function ServicesMenu() {
 
   const handleOpen = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
+    setHasOpened(true);
     setOpen(true);
   };
   const handleScheduleClose = () => {
@@ -78,10 +79,6 @@ export function ServicesMenu() {
       maxHeight: window.innerHeight - top - 16,
     });
   }, []);
-
-  useEffect(() => {
-    if (open) setHasOpened(true);
-  }, [open]);
 
   useEffect(() => {
     if (!open) return;
@@ -114,10 +111,14 @@ export function ServicesMenu() {
         type="button"
         aria-expanded={open}
         aria-controls="kva-services-flyout"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => {
+          setHasOpened(true);
+          setOpen((v) => !v);
+        }}
         onKeyDown={(e) => {
           if (e.key === "ArrowDown") {
             e.preventDefault();
+            setHasOpened(true);
             setOpen(true);
           }
         }}

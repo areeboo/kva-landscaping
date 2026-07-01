@@ -85,6 +85,7 @@
     font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
   }
 
   ::selection {
