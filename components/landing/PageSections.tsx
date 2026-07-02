@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, MapPin, Phone, Quote, Star } from "lucide-react";
+import { ArrowRight, CheckCircle2, MapPin, MoveRight, Phone, Quote, Star } from "lucide-react";
 import { content, type Review, type Service, type PortfolioItem } from "@/lib/content";
 import { getServiceIcon, serviceCategoryOrder } from "@/lib/service-icons";
 import { citySlug, type City } from "@/lib/landing-pages";
@@ -254,13 +254,13 @@ export function CtaStrip({
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href="/estimate"
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-kva-green px-6 py-3 text-base font-semibold text-kva-cream shadow-sm transition-colors hover:bg-kva-green-deep hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-green focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest"
+              className="inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-[6px] border border-kva-sage-soft/40 bg-kva-sage px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-kva-cream transition-colors hover:bg-kva-sage-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-sage focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest"
             >
-              Get a free walk-through <ArrowRight className="h-4 w-4" aria-hidden />
+              Get a free walk-through <MoveRight className="h-4 w-4" aria-hidden />
             </Link>
             <a
               href={`tel:${content.hero.secondary_cta.tel}`}
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-kva-cream/35 px-6 py-3 text-base font-medium text-kva-cream transition-colors hover:bg-kva-cream hover:text-kva-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-cream focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest"
+              className="inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-[6px] border border-kva-cream/55 bg-transparent px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-kva-cream transition-colors hover:border-kva-cream hover:bg-kva-cream/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-cream focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest"
             >
               <Phone className="h-4 w-4" aria-hidden />
               {content.business.phone_primary}

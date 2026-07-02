@@ -169,8 +169,8 @@ export function GalleryGrid({ items = content.gallery }: { items?: GalleryItem[]
               onClick={() => handleFilter(category)}
               className={
                 isActive
-                  ? "min-h-10 rounded-full bg-kva-green px-4 py-2 text-sm font-semibold text-kva-cream shadow-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-green focus-visible:ring-offset-2"
-                  : "min-h-10 rounded-full border border-kva-stone-light bg-kva-cream px-4 py-2 text-sm font-medium text-kva-stone transition-colors hover:border-kva-forest hover:text-kva-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2"
+                  ? "min-h-10 rounded-[6px] border border-kva-sage-soft/40 bg-kva-sage px-5 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-kva-cream transition-colors hover:bg-kva-sage-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-sage focus-visible:ring-offset-2"
+                  : "min-h-10 rounded-[6px] border border-kva-forest/45 bg-transparent px-5 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-kva-forest transition-colors hover:border-kva-forest hover:bg-kva-forest/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2"
               }
             >
               {category}

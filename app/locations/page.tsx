@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import { content } from "@/lib/content";
 import { citySlug, siteUrl } from "@/lib/landing-pages";
 import { Nav } from "@/components/sections/Nav";
@@ -74,9 +74,9 @@ export default function LocationsIndexPage() {
           <div className="mt-10">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 rounded-full border border-kva-forest px-5 py-3 text-sm font-medium text-kva-forest transition-colors hover:bg-kva-forest hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2"
+              className="inline-flex items-center gap-2.5 rounded-[6px] border border-kva-forest/45 bg-transparent px-5 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-kva-forest transition-colors hover:border-kva-forest hover:bg-kva-forest/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2"
             >
-              Back to the home page <ArrowRight className="h-4 w-4" aria-hidden />
+              Back to the home page <MoveRight className="h-4 w-4" aria-hidden />
             </Link>
           </div>
         </div>

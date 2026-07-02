@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import { content } from "@/lib/content";
 import {
   breadcrumbSchema,
@@ -122,13 +122,13 @@ export default async function ServiceDetailPage({ params }: Props) {
                   <div className="mt-6 flex flex-col gap-3">
                     <Link
                       href="/estimate"
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-kva-forest px-5 py-3 text-sm font-medium text-kva-cream transition-colors hover:bg-kva-forest-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2"
+                      className="inline-flex items-center justify-center gap-2.5 rounded-[6px] border border-kva-sage-soft/40 bg-kva-sage px-5 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-kva-cream transition-colors hover:bg-kva-sage-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-sage focus-visible:ring-offset-2"
                     >
-                      Get a free walk-through <ArrowRight className="h-4 w-4" aria-hidden />
+                      Get a free walk-through <MoveRight className="h-4 w-4" aria-hidden />
                     </Link>
                     <Link
                       href="/services"
-                      className="inline-flex items-center justify-center rounded-full border border-kva-stone-light px-5 py-3 text-sm font-medium text-kva-forest transition-colors hover:border-kva-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2"
+                      className="inline-flex items-center justify-center rounded-[6px] border border-kva-forest/45 bg-transparent px-5 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-kva-forest transition-colors hover:border-kva-forest hover:bg-kva-forest/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2"
                     >
                       View all services
                     </Link>

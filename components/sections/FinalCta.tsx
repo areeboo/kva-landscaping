@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Phone } from "lucide-react";
+import { MoveRight, Phone } from "lucide-react";
 import { content } from "@/lib/content";
 
 export function FinalCta() {
   const { hero } = content;
 
   return (
-    <section className="relative isolate overflow-hidden bg-kva-forest-deep">
+    <section className="relative isolate overflow-hidden bg-kva-pine">
       <Image
         src="/images/cta-lawn.webp"
         alt=""
@@ -36,14 +36,14 @@ export function FinalCta() {
         <div className="flex w-full flex-col gap-3 sm:flex-row lg:w-auto">
           <Link
             href="/estimate"
-            className="group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-kva-green px-6 py-3.5 text-base font-semibold text-kva-cream shadow-sm transition-all hover:-translate-y-0.5 hover:bg-kva-green-deep hover:text-kva-cream hover:shadow-md active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-green focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest-deep"
+            className="inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-[6px] border border-kva-sage-soft/40 bg-kva-sage px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-kva-cream transition-colors hover:bg-kva-sage-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-sage focus-visible:ring-offset-2 focus-visible:ring-offset-kva-pine"
           >
             {hero.primary_cta.label}
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+            <MoveRight className="h-4 w-4" aria-hidden />
           </Link>
           <a
             href={`tel:${hero.secondary_cta.tel}`}
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-kva-cream/55 px-6 py-3.5 text-base font-semibold text-kva-cream transition-colors hover:bg-kva-cream hover:text-kva-forest-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-cream focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest-deep"
+            className="inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-[6px] border border-kva-cream/55 bg-transparent px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-kva-cream transition-colors hover:border-kva-cream hover:bg-kva-cream/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-cream focus-visible:ring-offset-2 focus-visible:ring-offset-kva-pine"
           >
             <Phone className="h-4 w-4" aria-hidden />
             {hero.secondary_cta.label}

@@ -12,6 +12,7 @@ import {
   Flower2,
   LayoutGrid,
   Leaf,
+  MoveRight,
   Snowflake,
   Sprout,
   Star,
@@ -69,8 +70,7 @@ export function ServicesMenu() {
     const cs = getComputedStyle(container);
     const padL = parseFloat(cs.paddingLeft) || 0;
     const padR = parseFloat(cs.paddingRight) || 0;
-    // Anchor everything to the nav row's own rect so top + maxHeight always agree
-    // (header.bottom is unstable because the utility bar scrolls away).
+    // Anchor everything to the nav row's own rect so top + maxHeight always agree.
     const top = cr.bottom + 8;
     setPos({
       top,
@@ -122,14 +122,14 @@ export function ServicesMenu() {
             setOpen(true);
           }
         }}
-        className="group relative inline-flex items-center gap-1 rounded text-sm font-semibold text-kva-ink/90 transition-colors hover:text-kva-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2 focus-visible:ring-offset-kva-cream"
+        className="group relative inline-flex items-center gap-1 rounded text-sm font-semibold text-kva-cream/85 transition-colors hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-cream focus-visible:ring-offset-2 focus-visible:ring-offset-kva-pine"
       >
         Services
         <ChevronDown
           className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
           aria-hidden
         />
-        <span className="absolute -bottom-1 left-0 h-px w-0 bg-kva-forest transition-all duration-200 group-hover:w-[calc(100%-1.1rem)]" />
+        <span className="absolute -bottom-1 left-0 h-px w-0 bg-kva-cream transition-all duration-200 group-hover:w-[calc(100%-1.1rem)]" />
       </button>
 
       {hasOpened &&
@@ -165,10 +165,10 @@ export function ServicesMenu() {
                 <Link
                   href="/estimate"
                   onClick={() => setOpen(false)}
-                  className="group/cta mt-5 inline-flex items-center justify-center gap-1.5 rounded-full bg-kva-green px-4 py-2.5 text-sm font-semibold text-kva-cream shadow-sm transition-colors hover:bg-kva-green-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-cream focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest-deep"
+                  className="group/cta mt-5 inline-flex items-center justify-center gap-2 rounded-[6px] bg-kva-sage px-5 py-3 text-xs font-bold uppercase tracking-[0.12em] text-kva-cream transition-colors hover:bg-kva-sage-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-cream focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest-deep"
                 >
                   Free Walk-Through
-                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/cta:translate-x-0.5" aria-hidden />
+                  <MoveRight className="h-4 w-4" aria-hidden />
                 </Link>
                 <p className="mt-3 flex items-center gap-1.5 text-[11px] text-kva-cream/75">
                   <span className="flex items-center gap-0.5" aria-hidden>

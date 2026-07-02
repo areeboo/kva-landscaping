@@ -1,7 +1,10 @@
 type Props = {
   className?: string;
-  /** "default" = forest medallion for light surfaces; "onDark" = gold ring for dark surfaces. */
-  variant?: "default" | "onDark";
+  /**
+   * "default" = forest medallion for light surfaces; "onDark" = gold ring for dark surfaces;
+   * "onCream" = transparent tile with a dark pine leaf, to sit inside a cream tile.
+   */
+  variant?: "default" | "onDark" | "onCream";
 };
 
 /**
@@ -9,8 +12,19 @@ type Props = {
  * vein highlight — the brand mark used in the header and footer.
  */
 export function LeafMark({ className, variant = "default" }: Props) {
-  const tile = variant === "onDark" ? "var(--kva-gold)" : "var(--kva-forest)";
-  const leaf = variant === "onDark" ? "var(--kva-forest-deep)" : "var(--kva-cream)";
+  const tile =
+    variant === "onDark"
+      ? "var(--kva-gold)"
+      : variant === "onCream"
+        ? "transparent"
+        : "var(--kva-forest)";
+  const leaf =
+    variant === "onDark"
+      ? "var(--kva-forest-deep)"
+      : variant === "onCream"
+        ? "var(--kva-pine)"
+        : "var(--kva-cream)";
+  const vein = variant === "onCream" ? "var(--kva-cream)" : tile;
 
   return (
     <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden>
@@ -21,7 +35,7 @@ export function LeafMark({ className, variant = "default" }: Props) {
       />
       <path
         d="M11.6 30c4.3-5.2 8.6-9.5 13-13"
-        stroke={tile}
+        stroke={vein}
         strokeWidth="1.5"
         strokeLinecap="round"
         opacity="0.85"

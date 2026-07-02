@@ -1,7 +1,7 @@
 "use client";
 
 import { type ChangeEvent, type DragEvent, useActionState, useRef, useState } from "react";
-import { ArrowRight, CheckCircle2, ImagePlus, Phone, Star, X } from "lucide-react";
+import { MoveRight, CheckCircle2, ImagePlus, Phone, Star, X } from "lucide-react";
 import { submitEstimate, type EstimateState } from "@/app/actions/submit-estimate";
 import { content } from "@/lib/content";
 
@@ -114,7 +114,7 @@ export function EstimateForm() {
                 </p>
                 <a
                   href={`tel:${content.hero.secondary_cta.tel}`}
-                  className="mt-5 inline-flex items-center justify-center gap-2 rounded-full border border-kva-cream/30 px-5 py-2.5 text-sm font-semibold text-kva-cream transition-colors hover:bg-kva-cream hover:text-kva-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-cream focus-visible:ring-offset-2 focus-visible:ring-offset-kva-ink"
+                  className="mt-5 inline-flex items-center justify-center gap-2.5 rounded-[6px] border border-kva-cream/55 bg-transparent px-5 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-kva-cream transition-colors hover:border-kva-cream hover:bg-kva-cream/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-cream focus-visible:ring-offset-2 focus-visible:ring-offset-kva-ink"
                 >
                   <Phone className="h-4 w-4" aria-hidden />
                   Call {business.phone_primary}
@@ -225,10 +225,10 @@ export function EstimateForm() {
                 <button
                   type="submit"
                   disabled={pending}
-                  className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-kva-green px-6 py-3.5 text-base font-semibold text-kva-cream shadow-sm transition-all hover:-translate-y-0.5 hover:bg-kva-green-deep hover:text-kva-cream hover:shadow-md active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-green focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest-deep disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center gap-2.5 rounded-[6px] border border-kva-sage-soft/40 bg-kva-sage px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-kva-cream transition-colors hover:bg-kva-sage-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-sage focus-visible:ring-offset-2 focus-visible:ring-offset-kva-forest-deep disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
                 >
                   {pending ? "Sending…" : "Request Free Walk-Through"}
-                  {!pending && <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />}
+                  {!pending && <MoveRight className="h-4 w-4" aria-hidden />}
                 </button>
                 <p className="text-xs text-kva-cream/75">
                   <span className="text-kva-gold">*</span> required. We will not spam you or share your info. One reply within a business day, then a walk-through if you want it.

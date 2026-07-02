@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Phone, ArrowRight } from "lucide-react";
+import { Phone, MoveRight } from "lucide-react";
 import { content } from "@/lib/content";
 
 export function MobileStickyBar() {
@@ -30,7 +30,7 @@ export function MobileStickyBar() {
       <div className="mx-auto flex max-w-md items-center gap-2">
         <a
           href={`tel:${content.hero.secondary_cta.tel}`}
-          className="flex min-w-0 flex-[0.72] items-center justify-center gap-2 rounded-full border border-kva-forest bg-kva-cream px-3 py-3 text-sm font-semibold text-kva-forest transition-colors hover:bg-kva-forest hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2"
+          className="flex min-w-0 flex-[0.72] items-center justify-center gap-2 rounded-[6px] border border-kva-forest/45 bg-transparent px-5 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-kva-forest transition-colors hover:border-kva-forest hover:bg-kva-forest/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-forest focus-visible:ring-offset-2"
           aria-label={`Call KVA at ${content.business.phone_primary}`}
         >
           <Phone className="h-4 w-4 flex-none" aria-hidden />
@@ -38,10 +38,10 @@ export function MobileStickyBar() {
         </a>
         <a
           href="/estimate"
-          className="flex min-w-0 flex-[1.35] items-center justify-center gap-2 rounded-full bg-kva-green px-4 py-3 text-sm font-semibold text-kva-cream shadow-sm transition-colors hover:bg-kva-green-deep hover:text-kva-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-green focus-visible:ring-offset-2"
+          className="flex min-w-0 flex-[1.35] items-center justify-center gap-2 rounded-[6px] border border-kva-sage-soft/40 bg-kva-sage px-5 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-kva-cream transition-colors hover:bg-kva-sage-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-kva-sage focus-visible:ring-offset-2"
         >
           <span className="truncate">Free Walk-Through</span>
-          <ArrowRight className="h-4 w-4 flex-none" aria-hidden />
+          <MoveRight className="h-4 w-4 flex-none" aria-hidden />
         </a>
       </div>
     </div>
